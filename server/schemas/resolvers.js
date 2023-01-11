@@ -39,52 +39,51 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addFeed
-  },
-  addFeed: async (parent, { feedData }, context) => {
-    if (context.user) {
-      const updatedUser = await User.findByIdAndUpdate(
-        { _id: conext.user._id },
-        { $push: { savedFeed: { feedData } } },
-        { new: true }
-      )
-      return updatedUser;
+    addFeed: async (parent, { feedData }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: conext.user._id },
+          { $push: { savedFeed: { feedData } } },
+          { new: true }
+        )
+        return updatedUser;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    deleteFeed: async (parent, { feedId }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedFeed: { feedId } } },
+          { new: true }
+        )
+        return updatedUser;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    addComment: async (parent, { commentData }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: conext.user._id },
+          { $push: { savedFeed: { commentData } } },
+          { new: true }
+        )
+        return updatedUser;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    deleteComment: async (parent, { commentId }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedFeed: { commentId } } },
+          { new: true }
+        )
+        return updatedUser;
+      }
+      throw new AuthenticationError('You need to be logged in!');
     }
-    throw new AuthenticationError('You need to be logged in!');
   },
-  deleteFeed: async (parent, { feedId }, context) => {
-    if (context.user) {
-      const updatedUser = await User.findOneAndUpdate(
-        { _id: context.user._id },
-        { $pull: { savedFeed: { feedId } } },
-        { new: true }
-      )
-      return updatedUser;
-    }
-    throw new AuthenticationError('You need to be logged in!');
-  },
-  addComment: async (parent, { commentData }, context) => {
-    if (context.user) {
-      const updatedUser = await User.findByIdAndUpdate(
-        { _id: conext.user._id },
-        { $push: { savedFeed: { commentData } } },
-        { new: true }
-      )
-      return updatedUser;
-    }
-    throw new AuthenticationError('You need to be logged in!');
-  },
-  deleteComment: async (parent, { commentId }, context) => {
-    if (context.user) {
-      const updatedUser = await User.findOneAndUpdate(
-        { _id: context.user._id },
-        { $pull: { savedFeed: { commentId } } },
-        { new: true }
-      )
-      return updatedUser;
-    }
-    throw new AuthenticationError('You need to be logged in!');
-  }
 };
 
 module.exports = resolvers;
