@@ -13,7 +13,6 @@ import { useMutation } from "@apollo/client";
 
 import Auth from "../utils/auth";
 import SignupForm from "../components/SignupForm";
-import LoginForm from "../components/LoginForm";
 
 const Signup = () => {
   return (

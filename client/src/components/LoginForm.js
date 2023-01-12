@@ -1,7 +1,7 @@
 // see SignupForm.js for comments
 
 import React, { useState, useEffect } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+import { Form, Button, Alert, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
@@ -68,10 +68,10 @@ const LoginForm = () => {
           Something went wrong with your login credentials!
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
           <Form.Control
+            className="input"
             type="text"
-            placeholder="Your email"
+            placeholder="Email"
             name="email"
             onChange={handleInputChange}
             value={userFormData.email}
@@ -83,10 +83,10 @@ const LoginForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
           <Form.Control
+            className="input"
             type="password"
-            placeholder="Your password"
+            placeholder="Password"
             name="password"
             onChange={handleInputChange}
             value={userFormData.password}
@@ -96,16 +96,24 @@ const LoginForm = () => {
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
-        <Button
-          disabled={!(userFormData.email && userFormData.password)}
-          type="submit"
-          variant="success"
+        <Container
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          Login
-        </Button>
-        <Link to="/signup">
-          <Button variant="success">Create an Account</Button>
-        </Link>
+          <Button
+            disabled={!(userFormData.email && userFormData.password)}
+            type="submit"
+            variant="success"
+          >
+            Login
+          </Button>
+          <Link to="/signup">
+            <Button variant="success">Create an Account</Button>
+          </Link>
+        </Container>
       </Form>
     </>
   );

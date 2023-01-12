@@ -12,8 +12,9 @@ import {
 import { useMutation } from "@apollo/client";
 
 import Auth from "../utils/auth";
-import SignupForm from "../components/SignupForm";
 import LoginForm from "../components/LoginForm";
+import AlohaLogo from "../assets/download.png";
+import { ArrowBarDown } from "react-bootstrap-icons";
 
 const Home = () => {
   // // get token
@@ -35,15 +36,30 @@ const Home = () => {
 
   return (
     <>
-      <Jumbotron fluid className="text-light bg-dark">
+      <Jumbotron fluid className="jumbo bg-white">
         <Container>
-          <h1>Search for Books!</h1>
+          <img id="logo" src={AlohaLogo} alt="react logo" />
+          <p id="mission">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <p id="us">About Us</p>
+          <a href="#" className="arrow-icon">
+            <ArrowBarDown />
+          </a>
         </Container>
       </Jumbotron>
 
-      <Container>
+      <Container className="login-form">
         <LoginForm></LoginForm>
         <CardColumns></CardColumns>
+      </Container>
+      <Container fluid className="about-us bg-primary">
+        <section>
+          <h1>About Us</h1>
+        </section>
       </Container>
     </>
   );
