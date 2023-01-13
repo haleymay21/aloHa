@@ -17,23 +17,6 @@ import AlohaLogo from "../assets/download.png";
 import { ArrowBarDown } from "react-bootstrap-icons";
 
 const Home = () => {
-  // // get token
-  //   const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-  //   if (!token) {
-  //     return false;
-  //   }
-
-  //   try {
-  //     const { data } = await saveBook({
-  //       variables: { bookData: { ...bookToSave } },
-  //     });
-  //     console.log(savedBookIds);
-  //     setSavedBookIds([...savedBookIds, bookToSave.bookId]);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-
   return (
     <>
       <Jumbotron fluid className="jumbo bg-white">
@@ -46,7 +29,7 @@ const Home = () => {
             aliquip ex ea commodo consequat.
           </p>
           <p id="us">About Us</p>
-          <a href="#" className="arrow-icon">
+          <a href="#about-us" className="arrow-icon">
             <ArrowBarDown />
           </a>
         </Container>
@@ -56,10 +39,8 @@ const Home = () => {
         <LoginForm></LoginForm>
         <CardColumns></CardColumns>
       </Container>
-      <Container fluid className="about-us bg-primary">
-        <section>
-          <h1>About Us</h1>
-        </section>
+      <Container fluid id="about-us" className="about-us">
+        <h1>About Us</h1>
       </Container>
     </>
   );

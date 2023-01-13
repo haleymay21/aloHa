@@ -17,10 +17,10 @@ const AppNavbar = () => {
               {/* if user is logged in show link for feed, profiles and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to="/">
+                  <Nav.Link as={Link} to="/dashboard">
                     Your Feed
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/saved">
+                  <Nav.Link as={Link} to="/">
                     Local Profiles
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
