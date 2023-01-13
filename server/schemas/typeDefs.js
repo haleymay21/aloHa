@@ -5,7 +5,7 @@ const typeDefs = gql`
     _id: ID
     firstname: String
     lastname: String
-    zipcode: Int
+    zipcode: String
     location: String
     image: String
     email: String
@@ -25,7 +25,7 @@ const typeDefs = gql`
   }
 
   type Auth {
-    token: ID!
+    token: ID
     user: User
   }
 
@@ -45,7 +45,7 @@ const typeDefs = gql`
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
+     addUser(firstname: String, lastname: String, zipcode: String, email: String, password: String): Auth
     addFeed(feedData:FeedInput!): User
     deleteFeed(feedId: ID): User
     addComment(commentData: CommentInput!): User
