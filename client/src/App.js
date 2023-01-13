@@ -52,12 +52,11 @@ function App() {
           <Navbar />
           <Routes>
           <Route path="/" element={<Home />} />
-            <Route path="/saved" element={<SavedBooks />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route 
-              path="/profiles" 
-              element={<Profiles/>} 
+              path="/locals" 
+              element={<Locals/>} 
             />
             <Route
               path="*"
