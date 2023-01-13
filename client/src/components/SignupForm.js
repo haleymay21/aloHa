@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import { Form, Button, Alert } from "react-bootstrap";
 
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const SignupForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
+    firstname: "",
+    lastname: "",
+    zipcode: "",
+    email: "",
+    password: "",
   });
   // set state for form validation
   const [validated] = useState(false);
@@ -54,9 +56,11 @@ const SignupForm = () => {
     }
 
     setUserFormData({
-      username: '',
-      email: '',
-      password: '',
+      firstname: "",
+      lastname: "",
+      zipcode: "",
+      email: "",
+      password: "",
     });
   };
 
@@ -75,17 +79,47 @@ const SignupForm = () => {
         </Alert>
 
         <Form.Group>
-          <Form.Label htmlFor="username">Username</Form.Label>
+          <Form.Label htmlFor="firstname">First Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Your username"
-            name="username"
+            placeholder="Your firstname"
+            name="firstname"
             onChange={handleInputChange}
-            value={userFormData.username}
+            value={userFormData.firstname}
             required
           />
           <Form.Control.Feedback type="invalid">
-            Username is required!
+            First name is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor="lastname">Last Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Your lastname"
+            name="lastname"
+            onChange={handleInputChange}
+            value={userFormData.lastname}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Last name is required!
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor="zipcode">Zipcode</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Your zipcode"
+            name="zipcode"
+            onChange={handleInputChange}
+            value={userFormData.zipcode}
+            required
+          />
+          <Form.Control.Feedback type="invalid">
+            Zipcode is required!
           </Form.Control.Feedback>
         </Form.Group>
 
@@ -121,7 +155,9 @@ const SignupForm = () => {
         <Button
           disabled={
             !(
-              userFormData.username &&
+              userFormData.firstname &&
+              userFormData.lastname &&
+              userFormData.zipcode &&
               userFormData.email &&
               userFormData.password
             )

@@ -1,60 +1,93 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
+  mutation login($email: String, $password: String) {
     login(email: $email, password: $password) {
       token
       user {
         _id
-        username
+        firstname
+        lastname
       }
     }
   }
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+
+  mutation addUser($firstname: String, $lastname:String ,$email: String, $password: String) {
+    addUser(firstname: $firstname, lastname: $lastname ,email: $email, password: $password) {
       token
       user {
         _id
-        username
+        firstname
+        lastname
       }
     }
   }
 `;
 
-export const SAVE_BOOK = gql`
-  mutation saveBook($bookData: BookInput) {
-    saveBook(bookData: $bookData) {
+export const ADD_FEED = gql`
+  mutation addFeed($feedData:FeedInput) {
+    addFeed(feedData: $feedData) {
       _id
-      username
-      email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
+      firstname
+      lastname
+      zipcode
+      liveFeed {
+        feedId
+        status
+        urgency
+        resolved
       }
     }
   }
 `;
 
-export const REMOVE_BOOK = gql`
-  mutation removeBook($bookId: ID!) {
-    removeBook(bookId: $bookId) {
+export const DELETE_FEED = gql`
+  mutation deleteFeed($feedId: ID!) {
+    deleteFeed(feedId: $feedId) {
       _id
-      username
-      email
-      savedBooks {
-        bookId
-        authors
-        image
-        description
-        title
-        link
+      firstname
+      lastname
+      zipcode
+      liveFeed {
+        feedId
+        status
+        urgency
+        resolved
+      }
+    }
+  }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($commentData: CommentInput) {
+    addComment(commentData: $commentData) {
+      _id
+      firstname
+      lastname
+      zipcode
+      liveFeed {
+        comments {
+          commentText
+        }
+      }
+    }
+  }
+`;
+
+export const DELETE_COMMENT = gql`
+  mutation deleteComment($commentId:ID!) {
+    deleteComment(commentId: $commentId) {
+      _id
+      firstname
+      lastname
+      zipcode
+      liveFeed {
+        comments {
+          commentText
+        }
       }
     }
   }
