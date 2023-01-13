@@ -7,7 +7,7 @@ import {
   Button,
 } from 'react-bootstrap';
 
-const Profiles = () => {
+const Locals = () => {
     return (
         <>
         
@@ -15,4 +15,4 @@ const Profiles = () => {
   );
 };
 
-export default Profiles;
+export default Locals;

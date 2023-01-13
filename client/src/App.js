@@ -12,7 +12,7 @@ import { setContext } from '@apollo/client/link/context';
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
-import Profiles from './pages/Profiles';
+import Locals from './pages/Locals';
 
 
 // Construct our main GraphQL API endpoint
