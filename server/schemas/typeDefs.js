@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -23,6 +23,13 @@ const typeDefs = gql`
   type Comments {
     commentText: String
   }
+  type Locals {
+    name: String
+    hometown: String
+    whatToKnow: String
+    support: String
+    whereAreYou: String
+  }
 
   type Auth {
     token: ID
@@ -30,13 +37,21 @@ const typeDefs = gql`
   }
 
   input FeedInput {
-    status:String
-    urgency:Int
+    status: String
+    urgency: Int
     resolved: Boolean
   }
 
   input CommentInput {
-    commentText:String
+    commentText: String
+  }
+
+  input LocalsInput {
+    name: String
+    hometown: String
+    whatToKnow: String
+    support: String
+    whereAreYou: String
   }
 
   type Query {
@@ -44,12 +59,19 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
-     addUser(firstname: String, lastname: String, zipcode: String, email: String, password: String): Auth
-    addFeed(feedData:FeedInput!): User
+    login(email: String, password: String): Auth
+    addUser(
+      firstname: String
+      lastname: String
+      zipcode: String
+      email: String
+      password: String
+    ): Auth
+    addFeed(feedData: FeedInput!): User
     deleteFeed(feedId: ID): User
     addComment(commentData: CommentInput!): User
-    deleteComment(commentId:ID): User
+    deleteComment(commentId: ID): User
+    addLocal(localsData: LocalsInput): Locals
   }
 `;
 

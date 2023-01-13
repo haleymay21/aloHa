@@ -21,7 +21,7 @@ import {
 const Locals = () => {
   return (
     <>
-      {/* <MDBRow className="row-cols-1 row-cols-md-3 g-4">
+      <MDBRow className="row-cols-1 row-cols-md-3 g-4">
         <MDBCol>
           <MDBCard className="h-100">
             <MDBCardImage
@@ -81,7 +81,7 @@ const Locals = () => {
             </MDBCardFooter>
           </MDBCard>
         </MDBCol>
-      </MDBRow> */}
+      </MDBRow>
     </>
   );
 };
