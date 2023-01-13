@@ -17,7 +17,10 @@
   },
   "dependencies": {
     "apollo-server-express": "^2.25.3",
+    "bootstrap": "^5.2.3",
     "express": "^4.17.2",
-    "graphql": "^15.8.0"
+    "graphql": "^15.8.0",
+    "react-bootstrap": "^2.7.0",
+    "yarn": "^1.22.19"
   }
 }
