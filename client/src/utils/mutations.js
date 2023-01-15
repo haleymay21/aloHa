@@ -27,6 +27,7 @@ export const ADD_USER = gql`
   }
 `;
 
+
 export const ADD_FEED = gql`
   mutation addFeed($feedData:FeedInput) {
     addFeed(feedData: $feedData) {
@@ -34,6 +35,7 @@ export const ADD_FEED = gql`
       firstname
       lastname
       zipcode
+      createdAt
       liveFeed {
         feedId
         status
@@ -43,6 +45,7 @@ export const ADD_FEED = gql`
     }
   }
 `;
+
 
 export const DELETE_FEED = gql`
   mutation deleteFeed($feedId: ID!) {
@@ -68,10 +71,10 @@ export const ADD_COMMENT = gql`
       firstname
       lastname
       zipcode
+      createdAt
       liveFeed {
-        comments {
-          commentText
-        }
+        commentText
+        createdAt
       }
     }
   }
@@ -85,10 +88,9 @@ export const DELETE_COMMENT = gql`
       lastname
       zipcode
       liveFeed {
-        comments {
-          commentText
-        }
-      }
+        commentText
+        createdAt
+      }s
     }
   }
 `;

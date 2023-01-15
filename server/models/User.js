@@ -6,17 +6,16 @@ const feedSchema = require('./Feed');
 
 const userSchema = new Schema(
   {
-  firstname: {
+    firstname: {
       type: String,
       required: true,
-      unique: true,
+
     },
     lastname: {
       type: String,
       required: true,
-      unique: true,
     },
-    zipcode:{
+    zipcode: {
       type: String,
 
     },
