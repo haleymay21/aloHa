@@ -39,8 +39,7 @@ export const ADD_FEED = gql`
       liveFeed {
         feedId
         status
-        urgency
-        resolved
+        problem
       }
     }
   }
@@ -90,7 +89,7 @@ export const DELETE_COMMENT = gql`
       liveFeed {
         commentText
         createdAt
-      }s
+      }
     }
   }
 `;
