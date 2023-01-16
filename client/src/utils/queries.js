@@ -13,7 +13,7 @@ export const QUERY_ME = gql`
       savedFeeds {
         feedId
         status
-        urgency
+        problem
         resolved
       }
       savedComments {

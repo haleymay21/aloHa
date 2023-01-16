@@ -6,17 +6,17 @@ const feedSchema = new Schema({
   {
     type: String,
   },
-  urgency: {
-    type: String,
+  resolved: {
+    type: Boolean,
+    default: false,
+  },
+  problem: {
+    type: Boolean,
   },
   createdAt: {
     type: Date,
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
-  },
-  // saved book id from GoogleBooks
-  resolved: {
-    type: String,
   },
   comments: [commentsSchema]
 });
