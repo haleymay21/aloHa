@@ -1,28 +1,72 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react'
 import { Form, Button, Dropdown, Alert, Container } from "react-bootstrap";
 
-const Post = () => {
+import { useMutation } from '@apollo/client';
+import { ADD_FEED } from '../utils/mutations';
+
+function Post() {
+
+  const [problem, setProblem] = useState(false)
+
+  const [urgency, setUrgency] = useState('Not-Urgent - Blue')
+
+  const [feedStatus, setFeedStatus] = useState({
+    status: '',
+    resolved: false,
+  })
+
+  const [addPost, { error }] = useMutation(ADD_FEED)
+
+
+  const postOnSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log(feedStatus, problem, urgency)
+
+    try {
+      const { data } = await addPost({
+        variables: { ...feedStatus },
+      })
+      console.log(data)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  console.log(feedStatus, problem, urgency)
+
   return (
     <>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Create Post</Form.Label>
-        <Form.Control type="password" placeholder="Inform your community" />
-      </Form.Group>
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Nature of Post{" "}
-        </Dropdown.Toggle>
+      <form onSubmit={postOnSubmit}>
 
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">General</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Problem</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-      <Button variant="primary" type="submit">
-        Post{" "}
-      </Button>
+        {/* <h1>feed Status is {feedStatus.status}</h1> */}
+
+        <input type="text" name="status" className='feedBox' value={feedStatus.status} onChange={(e) => { setFeedStatus({ [e.target.name]: e.target.value }) }} placeholder="Inform your community" />
+
+        <div>
+          <label className='boxLabel'>
+            <input type="checkbox" className='checkBox' value={problem} onChange={(e) => { setProblem({ "problem": e.target.value }) }} />
+            Problem? check here.
+          </label>
+        </div>
+
+        {problem === 'false' ?
+          <div>
+            {/* <h1>{urgency}</h1> */}
+            <select className='dropdownContent' value={urgency} onChange={(e) => { setUrgency(e.target.value) }}>
+              <option>Not-Urgent - Blue</option>
+              <option>Standard - Green</option>
+              <option>Urgent - Yellow</option>
+              <option>Very Urgent - Orange</option>
+              <option>Immediate - Red</option>
+            </select> </div>
+          : <div></div>
+        }
+
+        <button className='button' type='submit'>Click Here</button>
+      </form>
     </>
-  );
-};
+  )
+}
 
 export default Post;
