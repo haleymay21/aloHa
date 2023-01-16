@@ -21,7 +21,9 @@ const Dashboard = () => {
           </Col>
           <Col xs={10} id="page-content-wrapper">
             <Post></Post>
-            <FeedCard></FeedCard>
+            <Container id="feed-container">
+              <FeedCard></FeedCard>
+            </Container>
           </Col>
         </Row>
       </Container>{" "}
