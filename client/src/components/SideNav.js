@@ -6,7 +6,7 @@ const SideNav = () => {
   return (
     <>
       <Nav
-        className="col-md-12 d-none d-md-block bg-light sidebar"
+        className="col-md-12 d-none d-md-block sidebar"
         activeKey="/home"
         onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
       >

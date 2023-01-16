@@ -21,6 +21,15 @@ h6 {
   font-style: italic;
 }
 
+/* styling for navbar */
+#navbar {
+  background-color: #d5b740;
+}
+
+.navLink {
+  color: #d5b740;
+}
+
 /* styling for home page */
 
 #icon,
@@ -59,6 +68,13 @@ p {
 
 .btn {
   margin: 10px;
+  background-color: #9c5b1f;
+  border-color: #9c5b1f;
+}
+
+.btn:hover {
+  background-color: #542d24;
+  border-color: #542d24;
 }
 
 .arrow-icon {
@@ -234,8 +250,6 @@ h5 {
   padding-bottom: 0;
 }
 
-
-
 /* styling for Post component */
 
 /* styling for SideNav componetn */
@@ -248,7 +262,9 @@ h5 {
   z-index: 100;
   padding: 48px 0 0;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  background-color: #66330455;
 }
+
 #sidebar-wrapper {
   min-height: 100vh !important;
   width: 100vw;
