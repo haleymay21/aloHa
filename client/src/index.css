@@ -26,8 +26,8 @@ h6 {
   background-color: #d5b740;
 }
 
-.navLink {
-  color: #d5b740;
+.nav-link {
+  color: #542d24 !important;
 }
 
 /* styling for home page */
@@ -77,14 +77,23 @@ p {
   border-color: #542d24;
 }
 
+.btn:disabled {
+  background-color: #9c5b1f;
+  border-color: #9c5b1f;
+}
+
 .arrow-icon {
   font-size: 40px;
-  color: green;
+  color: #9c5b1f;
   text-align: center;
   display: block;
   justify-content: center;
   align-items: center;
   margin: -20px;
+}
+
+.arrow-icon:hover {
+  color: #542d24;
 }
 
 .login-form {
@@ -94,7 +103,7 @@ p {
 .about-us {
   margin-top: 100px;
   height: 100vh;
-  background-color: rgba(128, 128, 0, 0.693);
+  background-color: #66330455;
 }
 
 /* styling for Locals page */
