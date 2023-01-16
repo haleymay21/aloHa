@@ -14,9 +14,18 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-
-  mutation addUser($firstname: String, $lastname:String ,$email: String, $password: String) {
-    addUser(firstname: $firstname, lastname: $lastname ,email: $email, password: $password) {
+  mutation addUser(
+    $firstname: String
+    $lastname: String
+    $email: String
+    $password: String
+  ) {
+    addUser(
+      firstname: $firstname
+      lastname: $lastname
+      email: $email
+      password: $password
+    ) {
       token
       user {
         _id
@@ -27,25 +36,20 @@ export const ADD_USER = gql`
   }
 `;
 
-
 export const ADD_FEED = gql`
-  mutation addFeed($feedData:FeedInput) {
+  mutation addFeed($feedData: FeedInput) {
     addFeed(feedData: $feedData) {
       _id
       firstname
       lastname
       zipcode
-      createdAt
       liveFeed {
-        feedId
         status
-        urgency
-        resolved
+        problem
       }
     }
   }
 `;
-
 
 export const DELETE_FEED = gql`
   mutation deleteFeed($feedId: ID!) {
@@ -55,7 +59,6 @@ export const DELETE_FEED = gql`
       lastname
       zipcode
       liveFeed {
-        feedId
         status
         urgency
         resolved
@@ -71,7 +74,6 @@ export const ADD_COMMENT = gql`
       firstname
       lastname
       zipcode
-      createdAt
       liveFeed {
         commentText
         createdAt
@@ -81,7 +83,7 @@ export const ADD_COMMENT = gql`
 `;
 
 export const DELETE_COMMENT = gql`
-  mutation deleteComment($commentId:ID!) {
+  mutation deleteComment($commentId: ID!) {
     deleteComment(commentId: $commentId) {
       _id
       firstname
@@ -90,7 +92,7 @@ export const DELETE_COMMENT = gql`
       liveFeed {
         commentText
         createdAt
-      }s
+      }
     }
   }
 `;

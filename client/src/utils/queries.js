@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
   {
@@ -10,10 +10,9 @@ export const QUERY_ME = gql`
       location
       image
       email
-      savedFeeds {
-        feedId
+      liveFeed {
         status
-        urgency
+        problem
         resolved
       }
       savedComments {
@@ -23,6 +22,3 @@ export const QUERY_ME = gql`
     }
   }
 `;
-
-
-

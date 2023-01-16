@@ -14,10 +14,9 @@ const typeDefs = gql`
   }
 
   type Feed {
-    statusId: ID
+    feedId: ID
     status: String
-    urgency: String
-    resolved: String
+    problem: Boolean
     createdAt: String
     comments: [Comments]
   }
@@ -33,9 +32,9 @@ const typeDefs = gql`
   }
 
   input FeedInput {
+    feedId: ID
     status: String
-    urgency: String
-    resolved: String
+    problem: Boolean
   }
 
   input CommentInput {
@@ -44,6 +43,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    findAll: User
   }
 
   type Mutation {
@@ -57,7 +57,7 @@ const typeDefs = gql`
     ): Auth
     addFeed(feedData: FeedInput): User
     deleteFeed(feedId: ID): User
-    addComment(commentData: CommentInput!): User
+    addComment(commentData: CommentInput): User
     deleteComment(commentId: ID): User
   }
 `;
