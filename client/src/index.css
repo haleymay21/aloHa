@@ -46,6 +46,9 @@ p {
 #logo {
   padding: 0;
 }
+#feed-container {
+  overflow: auto;
+}
 
 .jumbo {
   height: 400px;

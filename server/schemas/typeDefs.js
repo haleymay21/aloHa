@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -33,13 +33,13 @@ const typeDefs = gql`
   }
 
   input FeedInput {
-    status:String
-    urgency:String
+    status: String
+    urgency: String
     resolved: String
   }
 
   input CommentInput {
-    commentText:String
+    commentText: String
   }
 
   type Query {
@@ -48,11 +48,17 @@ const typeDefs = gql`
 
   type Mutation {
     login(email: String, password: String): Auth
-     addUser(firstname: String, lastname: String, zipcode: String, email: String, password: String): Auth
-    addFeed(feedData:FeedInput): User
+    addUser(
+      firstname: String
+      lastname: String
+      zipcode: String
+      email: String
+      password: String
+    ): Auth
+    addFeed(feedData: FeedInput): User
     deleteFeed(feedId: ID): User
     addComment(commentData: CommentInput!): User
-    deleteComment(commentId:ID): User
+    deleteComment(commentId: ID): User
   }
 `;
 
