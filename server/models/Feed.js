@@ -3,18 +3,20 @@ const commentsSchema = require('./Comments')
 // This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedBooks` array in User.js
 const feedSchema = new Schema({
   status:
-    {
-      type: String,
-    },
+  {
+    type: String,
+  },
   urgency: {
-    type: Number,
-    required: true,
-    // add a min and max between 1-5 
+    type: String,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
   },
   // saved book id from GoogleBooks
   resolved: {
-    type: Boolean,
-    required: true,
+    type: String,
   },
   comments: [commentsSchema]
 });

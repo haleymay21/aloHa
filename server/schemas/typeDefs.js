@@ -16,11 +16,14 @@ const typeDefs = gql`
   type Feed {
     statusId: ID
     status: String
-    urgency: Int
-    resolved: Boolean
+    urgency: String
+    resolved: String
+    createdAt: String
     comments: [Comments]
   }
   type Comments {
+    commentId: ID
+    createdAt: String
     commentText: String
   }
 
@@ -31,8 +34,8 @@ const typeDefs = gql`
 
   input FeedInput {
     status:String
-    urgency:Int
-    resolved: Boolean
+    urgency:String
+    resolved: String
   }
 
   input CommentInput {
@@ -44,9 +47,9 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
+    login(email: String, password: String): Auth
      addUser(firstname: String, lastname: String, zipcode: String, email: String, password: String): Auth
-    addFeed(feedData:FeedInput!): User
+    addFeed(feedData:FeedInput): User
     deleteFeed(feedId: ID): User
     addComment(commentData: CommentInput!): User
     deleteComment(commentId:ID): User
