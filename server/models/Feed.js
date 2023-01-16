@@ -7,7 +7,7 @@ const feedSchema = new Schema({
     type: String,
   },
   urgency: {
-    type: Number,
+    type: String,
   },
   createdAt: {
     type: Date,
@@ -16,7 +16,7 @@ const feedSchema = new Schema({
   },
   // saved book id from GoogleBooks
   resolved: {
-    type: Boolean,
+    type: String,
   },
   comments: [commentsSchema]
 });

@@ -17,7 +17,7 @@ const typeDefs = gql`
     statusId: ID
     status: String
     urgency: String
-    resolved: Boolean
+    resolved: String
     createdAt: String
     comments: [Comments]
   }
@@ -35,7 +35,7 @@ const typeDefs = gql`
   input FeedInput {
     status:String
     urgency:String
-    resolved: Boolean
+    resolved: String
   }
 
   input CommentInput {
