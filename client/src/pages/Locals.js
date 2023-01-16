@@ -18,6 +18,8 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 
+import LocalsForm from "../components/LocalsForm";
+
 const Locals = () => {
   return (
     <>
@@ -82,6 +84,10 @@ const Locals = () => {
           </MDBCard>
         </MDBCol>
       </MDBRow>
+
+      <Container>
+        <LocalsForm></LocalsForm>
+      </Container>
     </>
   );
 };

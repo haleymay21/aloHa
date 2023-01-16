@@ -82,15 +82,13 @@ const LocalsForm = () => {
           <Form.Label htmlFor="name">Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Name"
+            placeholder="What is your name/nickname?"
             name="name"
             onChange={handleInputChange}
             value={userFormData.name}
             required
           />
-          <Form.Control.Feedback type="invalid">
-            First name or nickname is required!
-          </Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
 
         {/* <Form.Group>
@@ -122,7 +120,7 @@ const LocalsForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="whatToKnow"></Form.Label>
+          <Form.Label htmlFor="whatToKnow">About</Form.Label>
           <Form.Control
             type="whatToKnow"
             placeholder="What would you like people in the neighborhood to know about you?"
@@ -148,10 +146,10 @@ const LocalsForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="whereAreYou"></Form.Label>
+          <Form.Label htmlFor="whereAreYou">Location</Form.Label>
           <Form.Control
             type="whereAreYou"
-            placeholder="Where are you often found?"
+            placeholder="Where can your community find you?"
             name=""
             onChange={handleInputChange}
             value={userFormData.whereAreYou}
