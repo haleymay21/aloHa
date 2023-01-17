@@ -36,11 +36,15 @@ const Locals = () => {
               className="local-images"
             />
             <MDBCardBody>
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <MDBCardText>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+              <MDBCardTitle className="local-name">NAME</MDBCardTitle>
+              <MDBCardText className="card-text">
+                <h7>Hometown:</h7><p>Kahuku, O'ahu</p>
+                <h7>What would you like people in the neighborhood to know about you?</h7>
+                <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+                <h7>What things/support would benefit you the most?</h7>
+                <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+                <h7>Where can your community members find you?</h7>
+                <p>~~~~~~</p>
               </MDBCardText>
             </MDBCardBody>
             <MDBCardFooter>
@@ -59,8 +63,8 @@ const Locals = () => {
               className="local-images"
             />
             <MDBCardBody>
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <MDBCardText>
+              <MDBCardTitle className="local-name">NAME</MDBCardTitle>
+              <MDBCardText className="card-text">
                 This card has supporting text below as a natural lead-in to
                 additional content.
               </MDBCardText>
@@ -80,8 +84,8 @@ const Locals = () => {
               className="local-images"
             />
             <MDBCardBody>
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <MDBCardText>
+              <MDBCardTitle className="local-name">NAME</MDBCardTitle>
+              <MDBCardText className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This card has even longer content
                 than the first to show that equal height action.

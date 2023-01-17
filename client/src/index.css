@@ -156,6 +156,8 @@ h5 {
   clear: both;
   margin-top: 0.5em;
   color: rgba(0, 0, 0, 0.68);
+  flex-direction: row !important
+  /* align-content: stretch; */
 }
 
 .card-footer {
@@ -225,12 +227,16 @@ h5 {
 }
 
 .our-locals {
-  max-height: 450px;
-  min-height: 450px;
+  max-height: 500px;
+  min-height: 500px;
 }
 
 .local-images {
-  max-height: 200px;
+  max-height: 260px;
+}
+
+.local-name {
+  text-align: center;
 }
 
 /* Tabs Card */
