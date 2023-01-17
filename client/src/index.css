@@ -104,6 +104,7 @@ p {
   margin-top: 100px;
   height: 100vh;
   background-color: #66330455;
+  text-align: center;
 }
 
 /* styling for Locals page */
@@ -222,6 +223,10 @@ h5 {
 .meta a:hover {
   color: rgba(0, 0, 0, 0.87);
 }
+
+/* .our-locals {
+  max-height: 100;
+} */
 
 /* Tabs Card */
 .tab-card {
