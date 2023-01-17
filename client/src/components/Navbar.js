@@ -7,26 +7,28 @@ import Auth from "../utils/auth";
 const AppNavbar = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar id="navbar" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
             MINI LOGO WILL GO HERE{" "}
           </Navbar.Brand>
           <Navbar.Collapse id="navbar">
-            <Nav className="ml-auto">
+            <Nav className="ml-auto myNav">
               {/* if user is logged in show link for feed, profiles and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to="/dashboard">
+                  <Nav.Link class="navLink" as={Link} to="/dashboard">
                     Your Feed
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/">
+                  <Nav.Link class="navLink" as={Link} to="/">
                     Local Profiles
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link class="navLink" onClick={Auth.logout}>
+                    Logout
+                  </Nav.Link>
                 </>
               ) : (
-                <Nav.Link as={Link} to="/signup">
+                <Nav.Link class="navLink" as={Link} to="/signup">
                   Create an Account
                 </Nav.Link>
               )}

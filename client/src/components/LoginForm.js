@@ -106,12 +106,11 @@ const LoginForm = () => {
           <Button
             disabled={!(userFormData.email && userFormData.password)}
             type="submit"
-            variant="success"
           >
             Login
           </Button>
           <Link to="/signup">
-            <Button variant="success">Create an Account</Button>
+            <Button>Create an Account</Button>
           </Link>
         </Container>
       </Form>

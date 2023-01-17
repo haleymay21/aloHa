@@ -13,8 +13,9 @@ const SideNav = () => {
   return (
     <>
       <Nav
-        className="col-md-12 d-none d-md-block bg-light sidebar"
-        activeKey="/"
+        className="col-md-12 d-none d-md-block sidebar"
+        activeKey="/home"
+        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
       >
         <p id="first-name">{userData.firstname}</p>{" "}
         <p id="last-name">{userData.lastname}</p>
