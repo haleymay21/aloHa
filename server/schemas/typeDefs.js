@@ -14,13 +14,15 @@ const typeDefs = gql`
   }
 
   type Feed {
-    statusId: ID
+    feedId: ID
     status: String
-    urgency: Int
-    resolved: Boolean
+    problem: Boolean
+    createdAt: String
     comments: [Comments]
   }
   type Comments {
+    commentId: ID
+    createdAt: String
     commentText: String
   }
   type Locals {
@@ -37,9 +39,9 @@ const typeDefs = gql`
   }
 
   input FeedInput {
+    feedId: ID
     status: String
-    urgency: Int
-    resolved: Boolean
+    problem: Boolean
   }
 
   input CommentInput {
@@ -56,6 +58,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    findAll: [User]
   }
 
   type Mutation {

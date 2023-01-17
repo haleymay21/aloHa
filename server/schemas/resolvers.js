@@ -4,12 +4,17 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    me: async (parent, args, context) => {
-      if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id }).select(
-          "-__v -password"
-        );
+    findAll: async (parent, args) => {
+      const allUser = await User.find();
+      console.log(allUser);
+      return allUser;
+    },
 
+    me: async (parent, args, context) => {
+      console.log("user context", context.user);
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id });
+        console.log("user data", userData);
         return userData;
       }
 
@@ -46,8 +51,8 @@ const resolvers = {
     addFeed: async (parent, { feedData }, context) => {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
-          { _id: conext.user._id },
-          { $push: { savedFeed: { feedData } } },
+          { _id: context.user._id },
+          { $push: { liveFeed: feedData } },
           { new: true }
         );
         return updatedUser;
@@ -58,7 +63,7 @@ const resolvers = {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedFeed: { feedId } } },
+          { $pull: { liveFeed: { feedId } } },
           { new: true }
         );
         return updatedUser;
@@ -68,8 +73,8 @@ const resolvers = {
     addComment: async (parent, { commentData }, context) => {
       if (context.user) {
         const updatedUser = await User.findByIdAndUpdate(
-          { _id: conext.user._id },
-          { $push: { savedFeed: { commentData } } },
+          { _id: context.user._id },
+          { $push: { liveFeed: { commentData } } },
           { new: true }
         );
         return updatedUser;
@@ -80,7 +85,7 @@ const resolvers = {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedFeed: { commentId } } },
+          { $pull: { liveFeed: { commentId } } },
           { new: true }
         );
         return updatedUser;

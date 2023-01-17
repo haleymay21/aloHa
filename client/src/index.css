@@ -56,6 +56,9 @@ p {
 #logo {
   padding: 0;
 }
+#feed-container {
+  overflow: auto;
+}
 
 .jumbo {
   height: 400px;
@@ -277,7 +280,11 @@ h5 {
 
 /* styling for Post component */
 
-/* styling for SideNav componetn */
+.post {
+  margin-top: 100px;
+}
+
+/* styling for SideNav component */
 
 .sidebar {
   top: 0;
@@ -307,4 +314,14 @@ h5 {
 #page-content-wrapper {
   min-width: 0;
   width: 100%;
+}
+
+#first-name,
+#last-name {
+  display: inline;
+  padding-left: 15px;
+}
+
+.link {
+  margin-top: 70px;
 }

@@ -44,10 +44,8 @@ export const ADD_FEED = gql`
       lastname
       zipcode
       liveFeed {
-        feedId
         status
-        urgency
-        resolved
+        problem
       }
     }
   }
@@ -61,7 +59,6 @@ export const DELETE_FEED = gql`
       lastname
       zipcode
       liveFeed {
-        feedId
         status
         urgency
         resolved
@@ -78,9 +75,8 @@ export const ADD_COMMENT = gql`
       lastname
       zipcode
       liveFeed {
-        comments {
-          commentText
-        }
+        commentText
+        createdAt
       }
     }
   }
@@ -94,9 +90,8 @@ export const DELETE_COMMENT = gql`
       lastname
       zipcode
       liveFeed {
-        comments {
-          commentText
-        }
+        commentText
+        createdAt
       }
     }
   }

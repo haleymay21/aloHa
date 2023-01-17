@@ -1,28 +1,79 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button, Dropdown, Alert, Container } from "react-bootstrap";
 
-const Post = () => {
+import { useMutation } from "@apollo/client";
+import { ADD_FEED } from "../utils/mutations";
+
+function Post() {
+  const [feedStatus, setFeedStatus] = useState({
+    status: "",
+    problem: false,
+  });
+
+  const [problem, setProblem] = useState(false);
+  const checkboxHandler = () => {
+    setProblem((current) => !current);
+  };
+
+  useEffect(() => {
+    console.log(problem);
+  }, [problem]);
+
+  const [addPost, { error }] = useMutation(ADD_FEED);
+
+  const postOnSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log(feedStatus, problem);
+
+    setFeedStatus({ status: feedStatus.status, problem: problem });
+
+    try {
+      const { data } = await addPost({
+        variables: {
+          feedData: { status: feedStatus.status, problem: problem },
+        },
+      });
+      console.log(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  console.log(feedStatus, problem);
+
   return (
     <>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Create Post</Form.Label>
-        <Form.Control type="password" placeholder="Inform your community" />
-      </Form.Group>
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Nature of Post{" "}
-        </Dropdown.Toggle>
+      <form onSubmit={postOnSubmit}>
+        <input
+          type="text"
+          name="status"
+          className="feedBox"
+          value={feedStatus.status}
+          onChange={(e) => {
+            setFeedStatus({ [e.target.name]: e.target.value });
+          }}
+          placeholder="Inform your community"
+        />
 
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">General</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Problem</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-      <Button variant="primary" type="submit">
-        Post{" "}
-      </Button>
+        <div>
+          <label className="boxLabel">
+            <input
+              type="checkbox"
+              name="problem"
+              className="checkBox"
+              value={problem}
+              onChange={checkboxHandler}
+            />
+            Problem? check here.
+          </label>
+        </div>
+
+        <button className="button" type="submit">
+          Click Here
+        </button>
+      </form>
     </>
   );
-};
+}
 
 export default Post;
