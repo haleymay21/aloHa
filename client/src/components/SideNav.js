@@ -1,15 +1,23 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import { withRouter } from "react-router";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../utils/queries";
 
 const SideNav = () => {
+  const { loading, error, data } = useQuery(QUERY_ME);
+  const userData = data?.me || {};
+  console.log(error);
+  console.log(userData);
+
   return (
     <>
       <Nav
         className="col-md-12 d-none d-md-block bg-light sidebar"
         activeKey="/"
       >
-        <p id="first-name">FirstName</p> <p id="last-name">LastName</p>
+        <p id="first-name">{userData.firstname}</p>{" "}
+        <p id="last-name">{userData.lastname}</p>
         <div className="sidebar-sticky"></div>
         <Nav.Item>
           <Nav.Link href="" className="link">

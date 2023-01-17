@@ -6,15 +6,15 @@ const resolvers = {
   Query: {
     findAll: async (parent, args) => {
       const allUser = await User.find();
+      console.log(allUser);
       return allUser;
     },
 
     me: async (parent, args, context) => {
+      console.log("user context", context.user);
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id }).select(
-          "-__v -password"
-        );
-
+        const userData = await User.findOne({ _id: context.user._id });
+        console.log("user data", userData);
         return userData;
       }
 

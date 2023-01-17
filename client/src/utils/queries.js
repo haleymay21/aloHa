@@ -8,16 +8,29 @@ export const QUERY_ME = gql`
       lastname
       zipcode
       location
-      image
       email
       liveFeed {
         status
         problem
-        resolved
+        createdAt
       }
-      savedComments {
-        commentId
-        commentText
+    }
+  }
+`;
+
+export const FIND_ALL = gql`
+  {
+    findAll {
+      _id
+      firstname
+      lastname
+      zipcode
+      location
+      email
+      liveFeed {
+        status
+        problem
+        createdAt
       }
     }
   }
