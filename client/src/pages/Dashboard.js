@@ -12,7 +12,6 @@ import FeedCard from "../components/FeedCard";
 import Auth from "../utils/auth";
 
 const Dashboard = () => {
-
   return (
     <>
       <Container fluid bg->

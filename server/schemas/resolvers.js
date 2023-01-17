@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, Locals } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -21,6 +21,8 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     // add other queries here
+    // querey for all Locals
+    // querey for individual houseless profile
   },
 
   Mutation: {
@@ -89,6 +91,11 @@ const resolvers = {
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in!");
+    },
+    addLocal: async (parent, { localsData }) => {
+      const local = await Locals.create({ localsData });
+
+      return local;
     },
   },
 };

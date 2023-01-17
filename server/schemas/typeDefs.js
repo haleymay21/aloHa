@@ -25,6 +25,13 @@ const typeDefs = gql`
     createdAt: String
     commentText: String
   }
+  type Locals {
+    name: String
+    hometown: String
+    whatToKnow: String
+    support: String
+    whereAreYou: String
+  }
 
   type Auth {
     token: ID
@@ -41,6 +48,14 @@ const typeDefs = gql`
     commentText: String
   }
 
+  input LocalsInput {
+    name: String
+    hometown: String
+    whatToKnow: String
+    support: String
+    whereAreYou: String
+  }
+
   type Query {
     me: User
     findAll: [User]
@@ -55,10 +70,11 @@ const typeDefs = gql`
       email: String
       password: String
     ): Auth
-    addFeed(feedData: FeedInput): User
+    addFeed(feedData: FeedInput!): User
     deleteFeed(feedId: ID): User
-    addComment(commentData: CommentInput): User
+    addComment(commentData: CommentInput!): User
     deleteComment(commentId: ID): User
+    addLocal(localsData: LocalsInput): Locals
   }
 `;
 
