@@ -26,6 +26,7 @@ const typeDefs = gql`
     commentText: String
   }
   type Locals {
+    _id: ID
     name: String
     hometown: String
     whatToKnow: String

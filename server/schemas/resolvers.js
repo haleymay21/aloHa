@@ -93,7 +93,8 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     addLocal: async (parent, { localsData }) => {
-      const local = await Locals.create({ localsData });
+      // might need to remove locals data from object below (removing curlies)
+      const local = await Locals.create(localsData);
 
       return local;
     },

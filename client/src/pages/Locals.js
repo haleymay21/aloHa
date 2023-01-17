@@ -19,7 +19,7 @@ import {
 } from "mdb-react-ui-kit";
 
 import LocalsForm from "../components/LocalsForm";
-
+import { useMutation, useQuery } from "@apollo/client";
 const Locals = () => {
   return (
     <>
@@ -38,8 +38,12 @@ const Locals = () => {
             <MDBCardBody>
               <MDBCardTitle className="local-name">NAME</MDBCardTitle>
               <MDBCardText className="card-text">
-                <h7>Hometown:</h7><p>Kahuku, O'ahu</p>
-                <h7>What would you like people in the neighborhood to know about you?</h7>
+                <h7>Hometown:</h7>
+                <p>Kahuku, O'ahu</p>
+                <h7>
+                  What would you like people in the neighborhood to know about
+                  you?
+                </h7>
                 <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
                 <h7>What things/support would benefit you the most?</h7>
                 <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
