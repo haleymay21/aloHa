@@ -1,33 +1,46 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 import { withRouter } from "react-router";
+import { useQuery } from "@apollo/client";
+import { QUERY_ME } from "../utils/queries";
 
 const SideNav = () => {
+  const { loading, error, data } = useQuery(QUERY_ME);
+  const userData = data?.me || {};
+  console.log(error);
+  console.log(userData);
+
   return (
     <>
       <Nav
         className="col-md-12 d-none d-md-block bg-light sidebar"
-        activeKey="/home"
-        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+        activeKey="/"
       >
+        <p id="first-name">{userData.firstname}</p>{" "}
+        <p id="last-name">{userData.lastname}</p>
         <div className="sidebar-sticky"></div>
         <Nav.Item>
-          <Nav.Link href="/home">Active</Nav.Link>
+          <Nav.Link href="" className="link">
+            Your Neighbors
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-1">Link</Nav.Link>
+          <Nav.Link eventKey="link-1" className="link">
+            Saved Profiles
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
+          <Nav.Link eventKey="link-2" className="link">
+            Resources
+          </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="disabled" disabled>
-            Disabled
+          <Nav.Link eventKey="link-3" className="link">
+            Events
           </Nav.Link>
         </Nav.Item>
       </Nav>
     </>
   );
 };
-// const SideNav = withRouter(Side);
 export default SideNav;

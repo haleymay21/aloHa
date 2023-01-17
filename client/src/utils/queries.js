@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
   {
@@ -8,21 +8,30 @@ export const QUERY_ME = gql`
       lastname
       zipcode
       location
-      image
       email
-      savedFeeds {
-        feedId
+      liveFeed {
         status
         problem
-        resolved
-      }
-      savedComments {
-        commentId
-        commentText
+        createdAt
       }
     }
   }
 `;
 
-
-
+export const FIND_ALL = gql`
+  {
+    findAll {
+      _id
+      firstname
+      lastname
+      zipcode
+      location
+      email
+      liveFeed {
+        status
+        problem
+        createdAt
+      }
+    }
+  }
+`;
