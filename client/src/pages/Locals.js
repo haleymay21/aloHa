@@ -33,6 +33,7 @@ const Locals = () => {
               src="https://d1l18ops95qbzp.cloudfront.net/wp-content/2018/04/Sleeping-bus-stop-homeless-houseless.jpg"
               alt="..."
               position="top"
+              className="local-images"
             />
             <MDBCardBody>
               <MDBCardTitle>Card title</MDBCardTitle>
@@ -55,6 +56,7 @@ const Locals = () => {
               src="https://static01.nyt.com/images/2014/06/23/us/HOMELESS/HOMELESS-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale"
               alt="..."
               position="top"
+              className="local-images"
             />
             <MDBCardBody>
               <MDBCardTitle>Card title</MDBCardTitle>
@@ -75,6 +77,7 @@ const Locals = () => {
               src="https://wpcdn.us-midwest-1.vip.tn-cloud.net/www.honolulumagazine.com/content/uploads/data-import/3f4328e4/splash-Homeless-in-Honolulu.png"
               alt="..."
               position="top"
+              className="local-images"
             />
             <MDBCardBody>
               <MDBCardTitle>Card title</MDBCardTitle>
