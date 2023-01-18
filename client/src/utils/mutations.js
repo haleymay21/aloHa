@@ -96,15 +96,11 @@ export const DELETE_COMMENT = gql`
     }
   }
 `;
+
 export const ADD_LOCAL = gql`
-  mutation addLocal($localsData: LocalsInput) {
-    addLocal(LocalsData: $localsData) {
-      _id
+  mutation addLocal($localsData: localsInput) {
+    addLocal(localsData: $localsData) {
       name
-      hometown
-      whatToKnow
-      support
-      whereAreYou
     }
   }
 `;

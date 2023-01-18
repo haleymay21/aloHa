@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
-import { ADD_USER } from "../utils/mutations";
+// import { ADD_LOCAL } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
@@ -20,15 +20,15 @@ const LocalsForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  const [addUser, { error }] = useMutation(ADD_USER);
+  // const [addLocal, { error }] = useMutation(ADD_LOCAL);
 
-  useEffect(() => {
-    if (error) {
-      setShowAlert(true);
-    } else {
-      setShowAlert(false);
-    }
-  }, [error]);
+  // useEffect(() => {
+  //   if (error) {
+  //     setShowAlert(true);
+  //   } else {
+  //     setShowAlert(false);
+  //   }
+  // }, [error]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -37,20 +37,19 @@ const LocalsForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log("clicked");
     // check if form has everything (as per react-bootstrap docs)
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
-
+    console.log(userFormData);
     try {
-      const { data } = await addUser({
-        variables: { ...userFormData },
-      });
-      console.log(data);
-      Auth.login(data.addUser.token);
+      // const { data } = await addLocal({
+      //   variables: { ...userFormData },
+      // });
+      // console.log(data);
     } catch (err) {
       console.error(err);
     }
@@ -124,7 +123,7 @@ const LocalsForm = () => {
           <Form.Control
             type="whatToKnow"
             placeholder="What would you like people in the neighborhood to know about you?"
-            name="what to know"
+            name="whatToKnow"
             onChange={handleInputChange}
             value={userFormData.whatToKnow}
             required
@@ -150,7 +149,7 @@ const LocalsForm = () => {
           <Form.Control
             type="whereAreYou"
             placeholder="Where can your community find you?"
-            name=""
+            name="whereAreYou"
             onChange={handleInputChange}
             value={userFormData.whereAreYou}
             required
@@ -159,15 +158,15 @@ const LocalsForm = () => {
         </Form.Group>
 
         <Button
-          disabled={
-            !(
-              userFormData.name &&
-              userFormData.hometown &&
-              userFormData.whatToKnow &&
-              userFormData.support &&
-              userFormData.whereAreYou
-            )
-          }
+          //   disabled={
+          //     !(
+          //       userFormData.name &&
+          //       userFormData.hometown &&
+          //       userFormData.whatToKnow &&
+          //       userFormData.support &&
+          //       userFormData.whereAreYou
+          //     )
+          //   }
           type="submit"
           variant="success"
         >
