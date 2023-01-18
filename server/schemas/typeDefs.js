@@ -70,9 +70,9 @@ const typeDefs = gql`
       email: String
       password: String
     ): Auth
-    addFeed(feedData: FeedInput!): User
+    addFeed(feedData: FeedInput): User
     deleteFeed(feedId: ID): User
-    addComment(commentData: CommentInput!): User
+    addComment(commentData: CommentInput): User
     deleteComment(commentId: ID): User
     addLocal(localsData: LocalsInput): Locals
   }
