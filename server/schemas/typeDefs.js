@@ -26,9 +26,9 @@ const typeDefs = gql`
     commentText: String
   }
   type Locals {
-    _id: ID
     name: String
     hometown: String
+    image: String
     whatToKnow: String
     support: String
     whereAreYou: String
@@ -49,7 +49,7 @@ const typeDefs = gql`
     commentText: String
   }
 
-  input LocalsInput {
+  input localsInput {
     name: String
     hometown: String
     whatToKnow: String
@@ -60,6 +60,7 @@ const typeDefs = gql`
   type Query {
     me: User
     findAll: [User]
+    findLocals: [Locals]
   }
 
   type Mutation {
@@ -75,7 +76,7 @@ const typeDefs = gql`
     deleteFeed(feedId: ID): User
     addComment(commentData: CommentInput): User
     deleteComment(commentId: ID): User
-    addLocal(localsData: LocalsInput): Locals
+    addLocal(localsData: localsInput): Locals
   }
 `;
 

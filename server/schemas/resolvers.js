@@ -21,6 +21,11 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     // add other queries here
+    findLocals: async (parent, args) => {
+      const allLocals = await Locals.find();
+      console.log(allLocals);
+      return allLocals;
+    },
     // querey for all Locals
     // querey for individual houseless profile
   },

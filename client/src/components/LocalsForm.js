@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
-import { ADD_LOCAL } from "../utils/mutations";
+// import { ADD_LOCAL } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
@@ -20,15 +20,15 @@ const LocalsForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  const [addLocal, { error }] = useMutation(ADD_LOCAL);
+  // const [addLocal, { error }] = useMutation(ADD_LOCAL);
 
-  useEffect(() => {
-    if (error) {
-      setShowAlert(true);
-    } else {
-      setShowAlert(false);
-    }
-  }, [error]);
+  // useEffect(() => {
+  //   if (error) {
+  //     setShowAlert(true);
+  //   } else {
+  //     setShowAlert(false);
+  //   }
+  // }, [error]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -46,10 +46,10 @@ const LocalsForm = () => {
     }
     console.log(userFormData);
     try {
-      const { data } = await addLocal({
-        variables: { ...userFormData },
-      });
-      console.log(data);
+      // const { data } = await addLocal({
+      //   variables: { ...userFormData },
+      // });
+      // console.log(data);
     } catch (err) {
       console.error(err);
     }
