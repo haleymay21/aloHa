@@ -155,12 +155,19 @@ h5 {
   line-height: 1.2857em;
 }
 
-.card-text {
+.card-text-prompts {
   clear: both;
   margin-top: 0.5em;
   color: rgba(0, 0, 0, 0.68);
-  flex-direction: row !important
+  text-align: left;
+  float: left;
+  /* flex-direction: row !important */
   /* align-content: stretch; */
+}
+
+.card-text-answers {
+  text-align: right;
+  float: right;
 }
 
 .card-footer {

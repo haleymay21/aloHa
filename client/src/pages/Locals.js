@@ -45,18 +45,18 @@ const Locals = () => {
                   <MDBCardTitle className="local-name">
                     {local.name}
                   </MDBCardTitle>
-                  <MDBCardText className="card-text">
-                    <h7>Hometown:</h7>
-                    <p>{local.hometown}</p>
-                    <h7>
+                  <MDBCardText>
+                    <h7 className="card-text-prompts">Hometown:</h7>
+                    <p class="card-text-answers">{local.hometown}</p>
+                    <h7 className="card-text-prompts">
                       What would you like people in the neighborhood to know
                       about you?
                     </h7>
-                    <p>{local.whatToKnow}</p>
-                    <h7>What things/support would benefit you the most?</h7>
-                    <p>{local.support}</p>
-                    <h7>Where can your community members find you?</h7>
-                    <p>{local.whereAreYou}</p>
+                    <p class="card-text-answers">{local.whatToKnow}</p>
+                    <h7 className="card-text-prompts">What things/support would benefit you the most?</h7>
+                    <p class="card-text-answers">{local.support}</p>
+                    <h7 className="card-text-prompts">Where can your community members find you?</h7>
+                    <p class="card-text-answers">{local.whereAreYou}</p>
                   </MDBCardText>
                 </MDBCardBody>
                 <MDBCardFooter>
