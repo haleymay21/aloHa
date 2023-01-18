@@ -1,0 +1,25 @@
+.feed-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.feed-card {
+    margin-top: 25px;
+    min-width: 5px;
+    background-color: aliceblue;
+    
+}
+
+#name, #date {
+    display: inline;
+}
+
+#name {
+    float:inline-start;
+}
+
+#date {
+    float: right;
+}
+
