@@ -1,8 +1,12 @@
 import React from "react";
-import { Nav } from "react-bootstrap";
+import { Nav, Container } from "react-bootstrap";
 import { withRouter } from "react-router";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
+import { HouseFill } from "react-bootstrap-icons";
+import { BookmarksFill } from "react-bootstrap-icons";
+import { SunFill } from "react-bootstrap-icons";
+import { CalendarCheckFill } from "react-bootstrap-icons";
 
 const SideNav = () => {
   const { loading, error, data } = useQuery(QUERY_ME);
@@ -12,32 +16,37 @@ const SideNav = () => {
 
   return (
     <>
-      <Nav
-        className="col-md-12 d-none d-md-block sidebar"
-        activeKey="/home"
-        onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-      >
-        <p id="first-name">{userData.firstname}</p>{" "}
-        <p id="last-name">{userData.lastname}</p>
-        <div className="sidebar-sticky"></div>
+      <Nav className="col-md-12 d-none d-md-block sidebar" activeKey="/home">
+        <Container className="users-name">
+          <p id="first-name">
+            <span>
+              {userData.firstname} {userData.lastname}
+            </span>
+          </p>
+          <div className="sidebar-sticky"></div>
+        </Container>
         <Nav.Item>
-          <Nav.Link href="" className="link">
-            Your Neighbors
+          <Nav.Link href="" className="link first">
+            <HouseFill class="side-nav-icons" />
+            &nbsp; Your Neighbors
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-1" className="link">
-            Saved Profiles
+            <BookmarksFill class="side-nav-icons" />
+            &nbsp; Saved Profiles
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-2" className="link">
-            Resources
+            <SunFill class="side-nav-icons sun" />
+            &nbsp; Resources
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-3" className="link">
-            Events
+            <CalendarCheckFill class="side-nav-icons" />
+            &nbsp; Events
           </Nav.Link>
         </Nav.Item>
       </Nav>
