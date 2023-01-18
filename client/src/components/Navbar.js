@@ -7,7 +7,7 @@ import Auth from "../utils/auth";
 const AppNavbar = () => {
   return (
     <>
-      <Navbar id="navbar" expand="lg">
+      <Navbar fluid id="navbar" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
             MINI LOGO WILL GO HERE{" "}
@@ -20,7 +20,7 @@ const AppNavbar = () => {
                   <Nav.Link className="navLink" as={Link} to="/dashboard">
                     Your Feed
                   </Nav.Link>
-                  <Nav.Link className="navLink" as={Link} to="/">
+                  <Nav.Link className="navLink" as={Link} to="/locals">
                     Local Profiles
                   </Nav.Link>
                   <Nav.Link className="navLink" onClick={Auth.logout}>
