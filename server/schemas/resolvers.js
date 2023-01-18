@@ -21,6 +21,11 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     // add other queries here
+    findLocals: async (parent, args) => {
+      const allLocals = await Locals.find();
+      console.log(allLocals);
+      return allLocals;
+    },
     // querey for all Locals
     // querey for individual houseless profile
   },
@@ -93,7 +98,8 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     addLocal: async (parent, { localsData }) => {
-      const local = await Locals.create({ localsData });
+      // might need to remove locals data from object below (removing curlies)
+      const local = await Locals.create(localsData);
 
       return local;
     },
