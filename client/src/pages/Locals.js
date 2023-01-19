@@ -1,10 +1,6 @@
 import React from "react";
 import {
-  Jumbotron,
-  Container,
-  CardColumns,
-  Card,
-  Button,
+  Container
 } from "react-bootstrap";
 
 import {
@@ -19,10 +15,10 @@ import {
 } from "mdb-react-ui-kit";
 
 import LocalsForm from "../components/LocalsForm";
-import { useMutation, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { FIND_LOCALS } from "../utils/queries";
 const Locals = () => {
-  const { loading, data } = useQuery(FIND_LOCALS);
+  const { data } = useQuery(FIND_LOCALS);
   const localsData = data?.findLocals || [];
   console.log(localsData);
   return (
