@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import "../styles/Post.css";
 import { useMutation } from "@apollo/client";
 import { ADD_FEED } from "../utils/mutations";
-import { MdOutlinePersonPin } from "react-icons/md";
+import { Person, PersonCircle } from "react-bootstrap-icons";
 
 function Post() {
   const [feedStatus, setFeedStatus] = useState({
@@ -48,7 +48,7 @@ function Post() {
         <form onSubmit={postOnSubmit}>
           <div className="form-group">
             <label id="post-icon" for="status">
-              <MdOutlinePersonPin />
+              <PersonCircle />
             </label>
             <input
               type="text"
@@ -71,11 +71,11 @@ function Post() {
                 value={problem}
                 onChange={checkboxHandler}
               />
-              Problem?!
+              <p id="problemo">Mark as an active problem</p>
             </label>
-            <button className="button" type="submit">
-              Click Here
-            </button>
+            <Button className="button" type="submit">
+              Post{" "}
+            </Button>
           </div>
         </form>
       </Container>
