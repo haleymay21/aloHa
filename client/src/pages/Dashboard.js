@@ -9,6 +9,7 @@ import Post from "../components/Post";
 import SideNav from "../components/SideNav";
 import FeedCard from "../components/FeedCard";
 import Navbar from "../components/Navbar";
+import "../styles/Dashboard.css";
 
 import Auth from "../utils/auth";
 
@@ -21,11 +22,13 @@ const Dashboard = () => {
           <Col xs={2} id="sidebar-wrapper">
             <SideNav />
           </Col>
-          <Col xs={10} id="page-content-wrapper">
-            <Post></Post>
-            <Container id="feed-container">
-              <FeedCard></FeedCard>
-            </Container>
+          <Col id="page-content-wrapper">
+            <div id="total-feed">
+              <Post></Post>
+              <Container id="feed-container">
+                <FeedCard></FeedCard>
+              </Container>
+            </div>
           </Col>
         </Row>
       </Container>{" "}

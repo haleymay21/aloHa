@@ -44,7 +44,7 @@ const Home = () => {
       <Container fluid id="about-us" className="about-us">
         <div id="container-us">
           <h1 id="about-us-title">About Us</h1>
-          <p class="about-us-description">
+          <p className="about-us-description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc
             aliquet bibendum enim facilisis gravida neque convallis. Laoreet
@@ -54,7 +54,7 @@ const Home = () => {
             vel facilisis volutpat.
           </p>{" "}
           <br></br>{" "}
-          <p class="about-us-description">
+          <p className="about-us-description">
             Ultricies leo integer malesuada nunc vel risus commodo viverra. Id
             consectetur purus ut faucibus pulvinar. Magna sit amet purus gravida
             quis blandit. Integer quis auctor elit sed vulputate. Ultricies

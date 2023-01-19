@@ -5,7 +5,6 @@ import { Card } from "react-bootstrap";
 import { useQuery } from "@apollo/client";
 import { FIND_ALL } from "../utils/queries";
 import "../styles/FeedCard.css";
-import { BsFillClockFill } from "react-icons/bs";
 import { MdOutlinePersonPin } from "react-icons/md";
 const FeedCard = () => {
   // space for any variables like useState
@@ -27,14 +26,17 @@ const FeedCard = () => {
                 <div className="feed-container">
                   <div>
                     {feed.problem === true ? (
-                      <Card style={{ width: "45rem", backgroundColor: "red" }}>
+                      <Card
+                        id="problem-card"
+                        style={{ width: "50rem", backgroundColor: "" }}
+                      >
                         <Card.Body>
                           <Card.Title id="name">
                             <MdOutlinePersonPin /> {user.firstname}{" "}
                             {user.lastname}{" "}
                           </Card.Title>
                           <Card.Subtitle id="date" className="mb-2">
-                            <BsFillClockFill /> {feed.createdAt}
+                            {feed.createdAt}
                           </Card.Subtitle>
                           <br></br>
                           <Card.Subtitle>
@@ -44,14 +46,14 @@ const FeedCard = () => {
                         </Card.Body>
                       </Card>
                     ) : (
-                      <Card style={{ width: "45rem" }}>
+                      <Card style={{ width: "50rem" }}>
                         <Card.Body>
                           <Card.Title id="name">
                             <MdOutlinePersonPin /> {user.firstname}{" "}
                             {user.lastname}{" "}
                           </Card.Title>
                           <Card.Subtitle id="date" className="mb-2t">
-                            <BsFillClockFill /> {feed.createdAt}
+                            {feed.createdAt}
                           </Card.Subtitle>
                           <Card.Subtitle>
                             <br></br>
