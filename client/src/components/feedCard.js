@@ -1,5 +1,4 @@
 // import style package here with specific style components
-import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 import { useQuery } from "@apollo/client";
@@ -9,7 +8,7 @@ import { BsFillClockFill } from "react-icons/bs";
 import { MdOutlinePersonPin } from "react-icons/md";
 const FeedCard = () => {
   // space for any variables like useState
-  const { loading, error, data } = useQuery(FIND_ALL);
+  const { error, data } = useQuery(FIND_ALL);
   const useData = data?.findAll || [];
   console.log(error);
   console.log(useData);
