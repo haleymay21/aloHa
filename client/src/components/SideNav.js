@@ -1,6 +1,5 @@
 import React from "react";
 import { Nav, Container } from "react-bootstrap";
-import { withRouter } from "react-router";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import { HouseFill } from "react-bootstrap-icons";
@@ -9,7 +8,7 @@ import { SunFill } from "react-bootstrap-icons";
 import { CalendarCheckFill } from "react-bootstrap-icons";
 
 const SideNav = () => {
-  const { loading, error, data } = useQuery(QUERY_ME);
+  const { error, data } = useQuery(QUERY_ME);
   const userData = data?.me || {};
   console.log(error);
   console.log(userData);
@@ -27,25 +26,25 @@ const SideNav = () => {
         </Container>
         <Nav.Item>
           <Nav.Link href="" className="link first">
-            <HouseFill class="side-nav-icons" />
+            <HouseFill className="side-nav-icons" />
             &nbsp; Your Neighbors
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-1" className="link">
-            <BookmarksFill class="side-nav-icons" />
+            <BookmarksFill className="side-nav-icons" />
             &nbsp; Saved Profiles
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-2" className="link">
-            <SunFill class="side-nav-icons sun" />
+            <SunFill className="side-nav-icons sun" />
             &nbsp; Resources
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-3" className="link">
-            <CalendarCheckFill class="side-nav-icons" />
+            <CalendarCheckFill className="side-nav-icons" />
             &nbsp; Events
           </Nav.Link>
         </Nav.Item>
