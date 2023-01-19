@@ -1,5 +1,6 @@
 import React from "react";
 import {
+
   Container
 } from "react-bootstrap";
 
@@ -17,12 +18,16 @@ import {
 import LocalsForm from "../components/LocalsForm";
 import { useQuery } from "@apollo/client";
 import { FIND_LOCALS } from "../utils/queries";
+import LocalsNavbar from "../components/LocalsNavBar";
+import "../styles/Locals.css";
+
 const Locals = () => {
   const { data } = useQuery(FIND_LOCALS);
   const localsData = data?.findLocals || [];
   console.log(localsData);
   return (
     <>
+      <LocalsNavbar />
       <MDBRow className="row-cols-1 row-cols-md-3 g-4">
         {localsData.map((local) => {
           return (
@@ -118,9 +123,7 @@ const Locals = () => {
         </MDBCol> */}
       </MDBRow>
 
-      <Container>
-        <LocalsForm></LocalsForm>
-      </Container>
+      <Container></Container>
     </>
   );
 };
