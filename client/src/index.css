@@ -159,7 +159,7 @@ h5 {
   clear: both;
   margin-top: 0.5em;
   color: rgba(0, 0, 0, 0.68);
-  flex-direction: row !important
+  flex-direction: row !important;
   /* align-content: stretch; */
 }
 
@@ -311,7 +311,7 @@ h5 {
   font-size: 1.2rem;
 }
 
-#page-content-wrapper {
+#ent-wrapper {
   min-width: 0;
   width: 100%;
 }
@@ -325,3 +325,4 @@ h5 {
 .link {
   margin-top: 70px;
 }
+
