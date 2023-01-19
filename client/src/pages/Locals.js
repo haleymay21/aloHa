@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Container,
+  Container
 } from "react-bootstrap";
 
 import {
