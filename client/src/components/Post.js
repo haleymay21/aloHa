@@ -4,6 +4,8 @@ import { Form, Button, Dropdown, Alert, Container } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { ADD_FEED } from "../utils/mutations";
 
+import "../styles/Post.css";
+
 function Post() {
   const [feedStatus, setFeedStatus] = useState({
     status: "",
@@ -47,7 +49,7 @@ function Post() {
         <input
           type="text"
           name="status"
-          className="feedBox"
+          className="feedBox bg-white"
           value={feedStatus.status}
           onChange={(e) => {
             setFeedStatus({ [e.target.name]: e.target.value });

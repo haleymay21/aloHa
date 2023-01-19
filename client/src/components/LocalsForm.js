@@ -90,20 +90,6 @@ const LocalsForm = () => {
           <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
 
-        {/* <Form.Group>
-          <Form.Label htmlFor="lastname">Last Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Your lastname"
-            name="lastname"
-            onChange={handleInputChange}
-            value={userFormData.lastname}
-            required
-          />
-          <Form.Control.Feedback type="invalid">
-            Last name is required!
-          </Form.Control.Feedback>
-        </Form.Group> */}
 
         <Form.Group>
           <Form.Label htmlFor="hometown">Hometown</Form.Label>

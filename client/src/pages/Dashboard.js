@@ -8,12 +8,14 @@ import { QUERY_ME } from "../utils/queries";
 import Post from "../components/Post";
 import SideNav from "../components/SideNav";
 import FeedCard from "../components/FeedCard";
+import Navbar from "../components/Navbar";
 
 import Auth from "../utils/auth";
 
 const Dashboard = () => {
   return (
     <>
+      <Navbar />
       <Container fluid bg->
         <Row>
           <Col xs={2} id="sidebar-wrapper">

@@ -7,6 +7,7 @@ import { HouseFill } from "react-bootstrap-icons";
 import { BookmarksFill } from "react-bootstrap-icons";
 import { SunFill } from "react-bootstrap-icons";
 import { CalendarCheckFill } from "react-bootstrap-icons";
+import "../styles/SideNav.css";
 
 const SideNav = () => {
   const { loading, error, data } = useQuery(QUERY_ME);
