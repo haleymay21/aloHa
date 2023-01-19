@@ -347,7 +347,7 @@ h5 {
   font-size: 1.2rem;
 }
 
-#page-content-wrapper {
+#ent-wrapper {
   min-width: 0;
   width: 100%;
   margin-top: 80px;
@@ -395,3 +395,4 @@ h5 {
 .sun {
   font-size: 26px;
 }
+
