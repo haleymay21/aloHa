@@ -6,14 +6,14 @@ import { ADD_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
-const SignupForm = () => {
+const LocalsForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
-    firstname: "",
-    lastname: "",
-    zipcode: "",
-    email: "",
-    password: "",
+    name: "",
+    hometown: "",
+    whatToKnow: "",
+    support: "",
+    whereAreYou: "",
   });
   // set state for form validation
   const [validated] = useState(false);
@@ -56,11 +56,11 @@ const SignupForm = () => {
     }
 
     setUserFormData({
-      firstname: "",
-      lastname: "",
-      zipcode: "",
-      email: "",
-      password: "",
+      name: "",
+      hometown: "",
+      whatToKnow: "",
+      support: "",
+      whereAreYou: "",
     });
   };
 
@@ -79,21 +79,19 @@ const SignupForm = () => {
         </Alert>
 
         <Form.Group>
-          <Form.Label htmlFor="firstname">First Name</Form.Label>
+          <Form.Label htmlFor="name">Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Your firstname"
-            name="firstname"
+            placeholder="What is your name/nickname?"
+            name="name"
             onChange={handleInputChange}
-            value={userFormData.firstname}
+            value={userFormData.name}
             required
           />
-          <Form.Control.Feedback type="invalid">
-            First name is required!
-          </Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group>
+        {/* <Form.Group>
           <Form.Label htmlFor="lastname">Last Name</Form.Label>
           <Form.Control
             type="text"
@@ -106,60 +104,68 @@ const SignupForm = () => {
           <Form.Control.Feedback type="invalid">
             Last name is required!
           </Form.Control.Feedback>
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group>
-          <Form.Label htmlFor="zipcode">Zipcode</Form.Label>
+          <Form.Label htmlFor="hometown">Hometown</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Your zipcode"
-            name="zipcode"
+            placeholder="Where are you from?"
+            name="hometown"
             onChange={handleInputChange}
-            value={userFormData.zipcode}
+            value={userFormData.hometown}
             required
           />
-          <Form.Control.Feedback type="invalid">
-            Zipcode is required!
-          </Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Label htmlFor="whatToKnow">About</Form.Label>
           <Form.Control
-            type="email"
-            placeholder="Your email address"
-            name="email"
+            type="whatToKnow"
+            placeholder="What would you like people in the neighborhood to know about you?"
+            name="what to know"
             onChange={handleInputChange}
-            value={userFormData.email}
+            value={userFormData.whatToKnow}
             required
           />
-          <Form.Control.Feedback type="invalid">
-            Email is required!
-          </Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Label htmlFor="support">Support</Form.Label>
           <Form.Control
-            type="password"
-            placeholder="Your password"
-            name="password"
+            type="support"
+            placeholder="What kind of things/support would benefit you the most?"
+            name="support"
             onChange={handleInputChange}
-            value={userFormData.password}
+            value={userFormData.support}
             required
           />
-          <Form.Control.Feedback type="invalid">
-            Password is required!
-          </Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
         </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor="whereAreYou">Location</Form.Label>
+          <Form.Control
+            type="whereAreYou"
+            placeholder="Where can your community find you?"
+            name=""
+            onChange={handleInputChange}
+            value={userFormData.whereAreYou}
+            required
+          />
+          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+        </Form.Group>
+
         <Button
           disabled={
             !(
-              userFormData.firstname &&
-              userFormData.lastname &&
-              userFormData.zipcode &&
-              userFormData.email &&
-              userFormData.password
+              userFormData.name &&
+              userFormData.hometown &&
+              userFormData.whatToKnow &&
+              userFormData.support &&
+              userFormData.whereAreYou
             )
           }
           type="submit"
@@ -172,4 +178,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default LocalsForm;
