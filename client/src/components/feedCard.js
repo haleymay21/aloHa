@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 import { useQuery } from "@apollo/client";
 import { FIND_ALL } from "../utils/queries";
-import "../styles/FeedCard.css"
+import "../styles/FeedCard.css";
 import { BsFillClockFill } from "react-icons/bs";
 import { MdOutlinePersonPin } from "react-icons/md";
 const FeedCard = () => {
@@ -30,31 +30,33 @@ const FeedCard = () => {
                       <Card style={{ width: "45rem", backgroundColor: "red" }}>
                         <Card.Body>
                           <Card.Title id="name">
-                          <MdOutlinePersonPin /> {user.firstname} {user.lastname}{" "}
+                            <MdOutlinePersonPin /> {user.firstname}{" "}
+                            {user.lastname}{" "}
                           </Card.Title>
                           <Card.Subtitle id="date" className="mb-2">
-                          <BsFillClockFill /> {feed.createdAt}
+                            <BsFillClockFill /> {feed.createdAt}
                           </Card.Subtitle>
                           <br></br>
                           <Card.Subtitle>
                             <br></br>
-                             {feed.status}
-                             </Card.Subtitle>
+                            {feed.status}
+                          </Card.Subtitle>
                         </Card.Body>
                       </Card>
                     ) : (
                       <Card style={{ width: "45rem" }}>
                         <Card.Body>
                           <Card.Title id="name">
-                          <MdOutlinePersonPin /> {user.firstname} {user.lastname}{" "}
+                            <MdOutlinePersonPin /> {user.firstname}{" "}
+                            {user.lastname}{" "}
                           </Card.Title>
                           <Card.Subtitle id="date" className="mb-2t">
-                          <BsFillClockFill /> {feed.createdAt}
+                            <BsFillClockFill /> {feed.createdAt}
                           </Card.Subtitle>
                           <Card.Subtitle>
                             <br></br>
                             {feed.status}
-                            </Card.Subtitle>
+                          </Card.Subtitle>
                         </Card.Body>
                       </Card>
                     )}
