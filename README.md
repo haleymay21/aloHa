@@ -3,9 +3,11 @@
 Application built to help users connect with their community to reach out and help the local houseless. 
 
 ## Description
+
 "It's like Pokemon Go! but for the houseless." - Tim
 
-## Screenshots
+### Screenshots
+
 ![screenshot of application homepage]()
 ![screenshot of registration page]()
 ![screenshot of login modal]()
@@ -13,10 +15,12 @@ Application built to help users connect with their community to reach out and he
 ![screenshot of local profiles page]()
 ![screenshot of about page]()
 
-### Links
+#### Links
+
 Deployed Site URL: 
 
-#### Contributors
+##### Contributors
+
 Jacqueline - https://github.com/JacquelineHockin 
 Haley - https://github.com/haleymay21
 Chase - https://github.com/chasebinkley

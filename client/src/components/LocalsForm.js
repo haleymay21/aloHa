@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
-
+import "../styles/LocalsForm.css";
 
 const LocalsForm = () => {
   // set initial form state
@@ -100,74 +100,83 @@ const LocalsForm = () => {
             Last name is required!
           </Form.Control.Feedback>
         </Form.Group> */}
+        <div className="localForms">
+          <Form.Group>
+            <Form.Label htmlFor="hometown">Hometown</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Where are you from?"
+              name="hometown"
+              onChange={handleInputChange}
+              value={userFormData.hometown}
+              required
+            />
+            <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+          </Form.Group>
+        </div>
 
-        <Form.Group>
-          <Form.Label htmlFor="hometown">Hometown</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Where are you from?"
-            name="hometown"
-            onChange={handleInputChange}
-            value={userFormData.hometown}
-            required
-          />
-          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
-        </Form.Group>
+        <div className="localForms">
+          <Form.Group>
+            <Form.Label htmlFor="whatToKnow">About</Form.Label>
+            <Form.Control
+              type="whatToKnow"
+              placeholder="What would you like people in the neighborhood to know about you?"
+              name="whatToKnow"
+              onChange={handleInputChange}
+              value={userFormData.whatToKnow}
+              required
+            />
+            <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+          </Form.Group>
+        </div>
 
-        <Form.Group>
-          <Form.Label htmlFor="whatToKnow">About</Form.Label>
-          <Form.Control
-            type="whatToKnow"
-            placeholder="What would you like people in the neighborhood to know about you?"
-            name="whatToKnow"
-            onChange={handleInputChange}
-            value={userFormData.whatToKnow}
-            required
-          />
-          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
-        </Form.Group>
+        <div className="localForms">
+          <Form.Group>
+            <Form.Label htmlFor="support">Support</Form.Label>
+            <Form.Control
+              type="support"
+              placeholder="What kind of things/support would benefit you the most?"
+              name="support"
+              onChange={handleInputChange}
+              value={userFormData.support}
+              required
+            />
+            <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+          </Form.Group>
+        </div>
 
-        <Form.Group>
-          <Form.Label htmlFor="support">Support</Form.Label>
-          <Form.Control
-            type="support"
-            placeholder="What kind of things/support would benefit you the most?"
-            name="support"
-            onChange={handleInputChange}
-            value={userFormData.support}
-            required
-          />
-          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
-        </Form.Group>
+        <div className="localForms">
+          <Form.Group>
+            <Form.Label htmlFor="whereAreYou">Location</Form.Label>
+            <Form.Control
+              type="whereAreYou"
+              placeholder="Where can your community find you?"
+              name="whereAreYou"
+              onChange={handleInputChange}
+              value={userFormData.whereAreYou}
+              required
+            />
+            <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+          </Form.Group>
+        </div>
 
-        <Form.Group>
-          <Form.Label htmlFor="whereAreYou">Location</Form.Label>
-          <Form.Control
-            type="whereAreYou"
-            placeholder="Where can your community find you?"
-            name="whereAreYou"
-            onChange={handleInputChange}
-            value={userFormData.whereAreYou}
-            required
-          />
-          <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
-        </Form.Group>
-
-        <Button
-          //   disabled={
-          //     !(
-          //       userFormData.name &&
-          //       userFormData.hometown &&
-          //       userFormData.whatToKnow &&
-          //       userFormData.support &&
-          //       userFormData.whereAreYou
-          //     )
-          //   }
-          type="submit"
-          variant="success"
-        >
-          Submit
-        </Button>
+        <div className="localButton">
+          <Button
+            //   disabled={
+            //     !(
+            //       userFormData.name &&
+            //       userFormData.hometown &&
+            //       userFormData.whatToKnow &&
+            //       userFormData.support &&
+            //       userFormData.whereAreYou
+            //     )
+            //   }
+            type="submit"
+            variant="success"
+          >
+            Submit
+          </Button>
+        </div>
       </Form>
     </>
   );
