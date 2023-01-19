@@ -15,7 +15,6 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 
-import LocalsForm from "../components/LocalsForm";
 import { useQuery } from "@apollo/client";
 import { FIND_LOCALS } from "../utils/queries";
 import LocalsNavbar from "../components/LocalsNavBar";
