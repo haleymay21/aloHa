@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import "../styles/Post.css";
 import { useMutation } from "@apollo/client";
 import { ADD_FEED } from "../utils/mutations";

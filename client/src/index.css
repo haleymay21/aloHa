@@ -57,15 +57,13 @@ h6 {
 p,
 .input {
   display: block;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   margin: auto;
 }
 
-#logo,
-p {
+#logo {
   text-align: center;
-  width: 50%;
 }
 
 #us {
@@ -185,18 +183,51 @@ h5 {
   height: 88;
 }
 
+/* .hometown-div {
+  flex-direction: row;
+
+} */
+
+
+
 .card-title {
   font-size: 1.28571429em;
   font-weight: 700;
   line-height: 1.2857em;
 }
 
-.card-text {
+.card-text-prompts {
   clear: both;
   margin-top: 0.5em;
+  margin-right: auto;
   color: rgba(0, 0, 0, 0.68);
-  flex-direction: row !important;
-  /* align-content: stretch; */
+  text-align: left;
+  justify-content: flex-start;
+  
+}
+
+.card-text-answers {
+  clear: both;
+  margin-top: 0.5em;
+  margin-right: auto;
+  color: rgba(0, 0, 0, 0.68);
+  text-align: left;
+  justify-content: flex-start;
+ 
+}
+
+/* .prompts-answers {
+  /* margin: auto; */
+  /* justify-content: flex-start; */
+  /* flex-direction: row-reverse; */
+  /* text-align: left; */
+  /* align-content: flex-start; */
+/* } */ 
+
+.card-text div {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .card-footer {
