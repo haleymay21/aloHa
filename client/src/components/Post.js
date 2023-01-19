@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, Dropdown, Alert, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "../styles/Post.css";
 import { useMutation } from "@apollo/client";
 import { ADD_FEED } from "../utils/mutations";
@@ -20,7 +20,7 @@ function Post() {
     console.log(problem);
   }, [problem]);
 
-  const [addPost, { error }] = useMutation(ADD_FEED);
+  const [addPost] = useMutation(ADD_FEED);
 
   const postOnSubmit = async (e) => {
     e.preventDefault();

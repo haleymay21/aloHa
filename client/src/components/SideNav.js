@@ -1,6 +1,5 @@
 import React from "react";
 import { Nav, Container } from "react-bootstrap";
-import { withRouter } from "react-router";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import { HouseFill } from "react-bootstrap-icons";
@@ -10,7 +9,7 @@ import { CalendarCheckFill } from "react-bootstrap-icons";
 import "../styles/SideNav.css";
 
 const SideNav = () => {
-  const { loading, error, data } = useQuery(QUERY_ME);
+  const { error, data } = useQuery(QUERY_ME);
   const userData = data?.me || {};
   console.log(error);
   console.log(userData);
