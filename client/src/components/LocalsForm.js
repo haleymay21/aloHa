@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
-// import { ADD_LOCAL } from "../utils/mutations";
+import { ADD_LOCAL } from "../utils/mutations";
 
 import Auth from "../utils/auth";
+import { FIND_LOCALS } from "../utils/queries";
 
 const LocalsForm = () => {
   // set initial form state
@@ -20,7 +21,7 @@ const LocalsForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  // const [addLocal, { error }] = useMutation(ADD_LOCAL);
+  const [addLocal, { error }] = useMutation(ADD_LOCAL, {refetchQueries:[{query: FIND_LOCALS}]});
 
   // useEffect(() => {
   //   if (error) {
@@ -46,10 +47,10 @@ const LocalsForm = () => {
     }
     console.log(userFormData);
     try {
-      // const { data } = await addLocal({
-      //   variables: { ...userFormData },
-      // });
-      // console.log(data);
+      const { data } = await addLocal({
+        variables: { localsData:{...userFormData }},
+      });
+      console.log(data);
     } catch (err) {
       console.error(err);
     }

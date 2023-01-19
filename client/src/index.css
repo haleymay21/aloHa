@@ -37,15 +37,13 @@ h6 {
 p,
 .input {
   display: block;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   margin: auto;
 }
 
-#logo,
-p {
+#logo {
   text-align: center;
-  width: 50%;
 }
 
 #mission {
@@ -149,6 +147,13 @@ h5 {
   height: 88;
 }
 
+/* .hometown-div {
+  flex-direction: row;
+
+} */
+
+
+
 .card-title {
   font-size: 1.28571429em;
   font-weight: 700;
@@ -158,16 +163,35 @@ h5 {
 .card-text-prompts {
   clear: both;
   margin-top: 0.5em;
+  margin-right: auto;
   color: rgba(0, 0, 0, 0.68);
   text-align: left;
-  float: left;
-  /* flex-direction: row !important */
-  /* align-content: stretch; */
+  justify-content: flex-start;
+  
 }
 
 .card-text-answers {
-  text-align: right;
-  float: right;
+  clear: both;
+  margin-top: 0.5em;
+  margin-right: auto;
+  color: rgba(0, 0, 0, 0.68);
+  text-align: left;
+  justify-content: flex-start;
+ 
+}
+
+/* .prompts-answers {
+  /* margin: auto; */
+  /* justify-content: flex-start; */
+  /* flex-direction: row-reverse; */
+  /* text-align: left; */
+  /* align-content: flex-start; */
+/* } */ 
+
+.card-text div {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .card-footer {
