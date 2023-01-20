@@ -17,7 +17,7 @@ function Post() {
   };
 
   useEffect(() => {
-    console.log(problem);
+    // console.log(problem);
   }, [problem]);
 
   const [addPost] = useMutation(ADD_FEED);
@@ -25,7 +25,7 @@ function Post() {
   const postOnSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(feedStatus, problem);
+    // console.log(feedStatus, problem);
 
     setFeedStatus({ status: feedStatus.status, problem: problem });
 
@@ -40,7 +40,7 @@ function Post() {
       console.error(e);
     }
   };
-  console.log(feedStatus, problem);
+  // console.log(feedStatus, problem);
 
   return (
     <>
