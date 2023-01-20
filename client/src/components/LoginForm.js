@@ -25,21 +25,16 @@ const LoginForm = () => {
   }, [error]);
 
   const handleInputChange = (event) => {
-
     const { name, value } = event.target;
     setUserFormData({ ...userFormData, [name]: value });
   };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     const form = event.currentTarget;
-    // if (form.checkValidity() === false) {
-    //   // event.preventDefault();
-    //   // event.stopPropagation();
-    // }
 
     try {
       const { data } = await login({
@@ -47,19 +42,15 @@ const LoginForm = () => {
       });
 
       Auth.login(data.login.token);
-
     } catch (e) {
       console.error(e);
     }
 
     // user logged in => navigate to the dashboard
-    await Auth.loggedIn() ?
-      navigate('/dashboard')
-      : console.log("incorrect email or password!")
-
+    (await Auth.loggedIn())
+      ? navigate("/dashboard")
+      : console.log("incorrect email or password!");
   };
-
-
 
   return (
     <>
@@ -109,13 +100,14 @@ const LoginForm = () => {
           }}
         >
           <Button
+            className="login-btn"
             disabled={!(userFormData.email && userFormData.password)}
             type="submit"
           >
             Login
           </Button>
           <Link to="/signup">
-            <Button>Create an Account</Button>
+            <Button className="login-btn">Create an Account</Button>
           </Link>
         </Container>
       </Form>
