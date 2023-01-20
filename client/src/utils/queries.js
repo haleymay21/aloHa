@@ -28,10 +28,24 @@ export const FIND_ALL = gql`
       location
       email
       liveFeed {
+        _id
         status
         problem
         createdAt
       }
+    }
+  }
+`;
+
+export const FIND_LOCALS = gql`
+  {
+    findLocals {
+      name
+      hometown
+      image
+      whatToKnow
+      support
+      whereAreYou
     }
   }
 `;

@@ -21,6 +21,11 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     // add other queries here
+    findLocals: async (parent, args) => {
+      const allLocals = await Locals.find();
+      console.log(allLocals);
+      return allLocals;
+    },
     // querey for all Locals
     // querey for individual houseless profile
   },
@@ -59,13 +64,32 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    updateFeed: async (parent, { feedId, feedData }, context) => {
+      if (context.user) {
+        try {
+          console.log("feedId: ", feedId)
+          const updateFeed = await User.findOneAndUpdate(
+            { _id: context.user._id, "liveFeed._id": feedId },
+            { $set: { "liveFeed.$.problem": feedData.problem } },
+            { new: true }
+          )
+          return updateFeed
+        } catch (e) {
+          console.log(e)
+        }
+      }
+    },
+
     deleteFeed: async (parent, { feedId }, context) => {
+
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { liveFeed: { feedId } } },
+          { $pull: { liveFeed: { _id: feedId } } },
           { new: true }
         );
+        console.log("updatedUser: ", updatedUser.liveFeed.length)
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in!");
@@ -93,7 +117,8 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     addLocal: async (parent, { localsData }) => {
-      const local = await Locals.create({ localsData });
+      // might need to remove locals data from object below (removing curlies)
+      const local = await Locals.create(localsData);
 
       return local;
     },

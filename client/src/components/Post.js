@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, Dropdown, Alert, Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import "../styles/Post.css";
 import { useMutation } from "@apollo/client";
 import { ADD_FEED } from "../utils/mutations";
-import { MdOutlinePersonPin } from "react-icons/md";
+import { PersonCircle } from "react-bootstrap-icons";
 
 function Post() {
   const [feedStatus, setFeedStatus] = useState({
@@ -17,15 +17,15 @@ function Post() {
   };
 
   useEffect(() => {
-    console.log(problem);
+    // console.log(problem);
   }, [problem]);
 
-  const [addPost, { error }] = useMutation(ADD_FEED);
+  const [addPost] = useMutation(ADD_FEED);
 
   const postOnSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(feedStatus, problem);
+    // console.log(feedStatus, problem);
 
     setFeedStatus({ status: feedStatus.status, problem: problem });
 
@@ -40,7 +40,7 @@ function Post() {
       console.error(e);
     }
   };
-  console.log(feedStatus, problem);
+  // console.log(feedStatus, problem);
 
   return (
     <>
@@ -48,7 +48,7 @@ function Post() {
         <form onSubmit={postOnSubmit}>
           <div className="form-group">
             <label id="post-icon" for="status">
-              <MdOutlinePersonPin />
+              <PersonCircle />
             </label>
             <input
               type="text"
@@ -71,11 +71,11 @@ function Post() {
                 value={problem}
                 onChange={checkboxHandler}
               />
-              Problem?!
+              <p id="problemo">Mark as an active problem</p>
             </label>
-            <button className="button" type="submit">
-              Click Here
-            </button>
+            <Button className="button" type="submit">
+              Post{" "}
+            </Button>
           </div>
         </form>
       </Container>

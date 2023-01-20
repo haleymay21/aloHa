@@ -51,6 +51,22 @@ export const ADD_FEED = gql`
   }
 `;
 
+export const UPDATE_FEED = gql`
+  mutation updateFeed($feedId: ID, $feedData: FeedInput) {
+    updateFeed(feedId: $feedId, feedData: $feedData) {
+      _id
+      firstname
+      lastname
+      zipcode
+      liveFeed {
+        _id
+       
+        problem
+      }
+    }
+  }
+`
+
 export const DELETE_FEED = gql`
   mutation deleteFeed($feedId: ID!) {
     deleteFeed(feedId: $feedId) {
@@ -59,9 +75,15 @@ export const DELETE_FEED = gql`
       lastname
       zipcode
       liveFeed {
+        _id
         status
-        urgency
-        resolved
+        problem
+        createdAt
+        comments{
+          commentId
+          createdAt
+          commentText
+        }
       }
     }
   }
@@ -75,6 +97,7 @@ export const ADD_COMMENT = gql`
       lastname
       zipcode
       liveFeed {
+        commentId
         commentText
         createdAt
       }
@@ -96,15 +119,11 @@ export const DELETE_COMMENT = gql`
     }
   }
 `;
+
 export const ADD_LOCAL = gql`
-  mutation addLocal($localsData: LocalsInput) {
-    addLocal(LocalsData: $localsData) {
-      _id
+  mutation addLocal($localsData: localsInput) {
+    addLocal(localsData: $localsData) {
       name
-      hometown
-      whatToKnow
-      support
-      whereAreYou
     }
   }
 `;
