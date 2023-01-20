@@ -1,0 +1,27 @@
+.signupForms {
+    margin-top: 140px;
+    padding-top: 20px;
+    padding-left: 154px;
+    padding-right: 754px;
+    
+}
+
+.signupButton {
+    margin-top: 50px;
+    margin-left: 190px;
+}
+
+#formLabel {
+    font-size: 20px;
+    text-align: center;
+}
+
+.signupPic {
+    background-size: cover;
+
+}
+
+.signupContainer {
+    display: flex;
+    flex-wrap:
+}
