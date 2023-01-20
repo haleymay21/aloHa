@@ -1,35 +1,4 @@
-import React, { useState } from "react";
-import { Modal, Tab, Button } from "react-bootstrap";
-
-import {
-  MDBCard,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardFooter,
-  MDBRow,
-  MDBCol,
-} from "mdb-react-ui-kit";
-
-import { useQuery } from "@apollo/client";
-import { FIND_LOCALS } from "../utils/queries";
-import "../styles/Locals.css";
-
-const LocalsCard = () => {
-  const { data } = useQuery(FIND_LOCALS);
-  const localsData = data?.findLocals || [];
-  console.log(localsData);
-  const [showModal, setShowModal] = useState(false);
-
-  return (
-    <>
-      <MDBRow className="row-cols-1 row-cols-md-3 g-4">
-        {localsData.map((localsData) => {
-          return (
-            <MDBCol>
-              <Button
-                id="locals-card-button"
+          id="locals-card-button"
                 onClick={() => setShowModal(true)}
               >
                 Show Modal
@@ -50,8 +19,9 @@ const LocalsCard = () => {
                     </Modal.Title>
                   </Modal.Header>
 
-                  <Tab.Content>
-                    <Tab.Pane eventKey="new-card">
+                  
+                    <Tab.Content>
+                      <Tab.Pane eventKey="new-card">
                       <Modal.Body>
                         <MDBCard
                           handleModalClose={() => setShowModal(false)}
@@ -61,14 +31,14 @@ const LocalsCard = () => {
                             // src="https://mdbootstrap.com/img/new/standard/city/044.webp"
                             // src="https://mymodernmet.com/wp/wp-content/uploads/archive/kCNkeHozTY469iw7DRRo_dianakim1.jpg"
                             // src="https://wehco.media.clients.ellingtoncms.com/timesfreepress/img/photos/2014/09/10/88050b5e08504e7cb859abadc25ae18c_t800.jpg?90232451fbcadccc64a17de7521d859a8f88077d"
-                            src={localsData.image}
+                            src={local.image}
                             alt="..."
                             position="top"
                             className="local-images"
                           />
                           <MDBCardBody>
                             <MDBCardTitle className="local-name">
-                              {localsData.name}
+                              {local.name}
                             </MDBCardTitle>
                             <div>
                               <MDBCardText>
@@ -77,7 +47,7 @@ const LocalsCard = () => {
                                     Hometown:
                                   </h7>
                                   <p class="card-text-answers">
-                                    {localsData.hometown}
+                                    {local.hometown}
                                   </p>
                                 </div>
                                 <div>
@@ -86,7 +56,7 @@ const LocalsCard = () => {
                                     neighborhood to know about you?
                                   </h7>
                                   <p class="card-text-answers">
-                                    {localsData.whatToKnow}
+                                    {local.whatToKnow}
                                   </p>
                                 </div>
                                 <div>
@@ -95,7 +65,7 @@ const LocalsCard = () => {
                                     most?
                                   </h7>
                                   <p class="card-text-answers">
-                                    {localsData.support}
+                                    {local.support}
                                   </p>
                                 </div>
                                 <div>
@@ -103,7 +73,7 @@ const LocalsCard = () => {
                                     Where can your community members find you?
                                   </h7>
                                   <p class="card-text-answers">
-                                    {localsData.whereAreYou}
+                                    {local.whereAreYou}
                                   </p>
                                 </div>
                               </MDBCardText>
@@ -115,17 +85,10 @@ const LocalsCard = () => {
                             </small>
                           </MDBCardFooter>
                         </MDBCard>
-                      </Modal.Body>
-                    </Tab.Pane>
-                  </Tab.Content>
+                        </Modal.Body>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  
                 </Tab.Container>
               </Modal>
             </MDBCol>
-          );
-        })}
-      </MDBRow>
-    </>
-  );
-};
-
-export default LocalsCard;
