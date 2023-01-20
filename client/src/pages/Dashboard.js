@@ -7,7 +7,7 @@ import { QUERY_ME } from "../utils/queries";
 // import { removeBookId } from "../utils/localStorage";
 import Post from "../components/Post";
 import SideNav from "../components/SideNav";
-import FeedCard from "../components/FeedCard";
+import FeedCard from "../components/feedCard";
 
 import Auth from "../utils/auth";
 

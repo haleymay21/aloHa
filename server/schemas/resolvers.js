@@ -57,13 +57,32 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    updateFeed: async (parent, { feedId, feedData }, context) => {
+      if (context.user) {
+        try {
+          console.log("feedId: ", feedId)
+          const updateFeed = await User.findOneAndUpdate(
+            { _id: context.user._id, "liveFeed._id": feedId },
+            { $set: { "liveFeed.$.problem": feedData.problem } },
+            { new: true }
+          )
+          return updateFeed
+        } catch (e) {
+          console.log(e)
+        }
+      }
+    },
+
     deleteFeed: async (parent, { feedId }, context) => {
+
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { liveFeed: { feedId } } },
+          { $pull: { liveFeed: { _id: feedId } } },
           { new: true }
         );
+        console.log("updatedUser: ", updatedUser.liveFeed.length)
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in!");

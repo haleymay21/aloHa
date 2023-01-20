@@ -14,7 +14,7 @@ const typeDefs = gql`
   }
 
   type Feed {
-    feedId: ID
+    _id: ID
     status: String
     problem: Boolean
     createdAt: String
@@ -38,8 +38,11 @@ const typeDefs = gql`
   }
 
   input CommentInput {
+    commentId: ID
     commentText: String
   }
+
+ 
 
   type Query {
     me: User
@@ -56,6 +59,7 @@ const typeDefs = gql`
       password: String
     ): Auth
     addFeed(feedData: FeedInput): User
+    updateFeed(feedId: ID, feedData: FeedInput): User
     deleteFeed(feedId: ID): User
     addComment(commentData: CommentInput): User
     deleteComment(commentId: ID): User

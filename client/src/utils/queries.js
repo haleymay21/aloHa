@@ -28,6 +28,7 @@ export const FIND_ALL = gql`
       location
       email
       liveFeed {
+        _id
         status
         problem
         createdAt
