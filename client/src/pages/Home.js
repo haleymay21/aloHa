@@ -18,8 +18,9 @@ const Home = () => {
         <Container>
           <img id="logo" src={AlohaLogo} alt="react logo" />
           <p id="mission">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <div id="mission-statement">We want people without a house to still feel a part of a community.</div>
+          <div id="mission-statement2">This is a commUNITY-based app that humanizes the people you see most every day ━  
+          giving you a lil information and a platform to communicate so that you can better take care of your neighbors.</div>
           </p>
         </Container>
       </Container>
@@ -37,22 +38,11 @@ const Home = () => {
         <div id="container-us">
           <h1 id="about-us-title">About Us</h1>
           <p className="about-us-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc
-            aliquet bibendum enim facilisis gravida neque convallis. Laoreet
-            suspendisse interdum consectetur libero id faucibus nisl tincidunt
-            eget. Elit ut aliquam purus sit amet luctus. Arcu risus quis varius
-            quam quisque id diam. Mauris ultrices eros in cursus. Accumsan lacus
-            vel facilisis volutpat.
           </p>{" "}
           <br></br>{" "}
           <p className="about-us-description">
-            Ultricies leo integer malesuada nunc vel risus commodo viverra. Id
-            consectetur purus ut faucibus pulvinar. Magna sit amet purus gravida
-            quis blandit. Integer quis auctor elit sed vulputate. Ultricies
-            tristique nulla aliquet enim tortor at auctor urna. Nulla malesuada
-            pellentesque elit eget gravida cum sociis natoque. Adipiscing
-            commodo elit at imperdiet dui accumsan.
+         
+
           </p>
         </div>
       </Container>
