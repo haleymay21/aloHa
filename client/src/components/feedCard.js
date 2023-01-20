@@ -13,7 +13,7 @@ import { DELETE_FEED } from "../utils/mutations";
 
 const FeedCard = () => {
   // space for any variables like useState
-  const { loading, error, data } = useQuery(FIND_ALL);
+  const { error, data } = useQuery(FIND_ALL);
   const useData = data?.findAll || [];
   console.log(error);
   console.log("useData: ", useData);

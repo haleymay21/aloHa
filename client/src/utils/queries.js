@@ -36,3 +36,16 @@ export const FIND_ALL = gql`
     }
   }
 `;
+
+export const FIND_LOCALS = gql`
+  {
+    findLocals {
+      name
+      hometown
+      image
+      whatToKnow
+      support
+      whereAreYou
+    }
+  }
+`;

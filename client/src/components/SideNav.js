@@ -1,42 +1,52 @@
 import React from "react";
-import { Nav } from "react-bootstrap";
-import { withRouter } from "react-router";
+import { Nav, Container } from "react-bootstrap";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
+import { HouseFill } from "react-bootstrap-icons";
+import { BookmarksFill } from "react-bootstrap-icons";
+import { SunFill } from "react-bootstrap-icons";
+import { CalendarCheckFill } from "react-bootstrap-icons";
+import "../styles/SideNav.css";
 
 const SideNav = () => {
-  const { loading, error, data } = useQuery(QUERY_ME);
+  const { error, data } = useQuery(QUERY_ME);
   const userData = data?.me || {};
   console.log(error);
   console.log(userData);
 
   return (
     <>
-      <Nav
-        className="col-md-12 d-none d-md-block bg-light sidebar"
-        activeKey="/"
-      >
-        <p id="first-name">{userData.firstname}</p>{" "}
-        <p id="last-name">{userData.lastname}</p>
-        <div className="sidebar-sticky"></div>
+      <Nav className="col-md-12 d-none d-md-block sidebar" activeKey="/home">
+        <Container className="users-name">
+          <p id="first-name">
+            <span>
+              {userData.firstname} {userData.lastname}
+            </span>
+          </p>
+          <div className="sidebar-sticky"></div>
+        </Container>
         <Nav.Item>
-          <Nav.Link href="" className="link">
-            Your Neighbors
+          <Nav.Link href="" className="link first">
+            <HouseFill className="side-nav-icons" />
+            &nbsp; Your Neighbors
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-1" className="link">
-            Saved Profiles
+            <BookmarksFill className="side-nav-icons" />
+            &nbsp; Saved Profiles
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-2" className="link">
-            Resources
+            <SunFill className="side-nav-icons sun" />
+            &nbsp; Resources
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link eventKey="link-3" className="link">
-            Events
+            <CalendarCheckFill className="side-nav-icons" />
+            &nbsp; Events
           </Nav.Link>
         </Nav.Item>
       </Nav>

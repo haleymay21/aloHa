@@ -119,3 +119,11 @@ export const DELETE_COMMENT = gql`
     }
   }
 `;
+
+export const ADD_LOCAL = gql`
+  mutation addLocal($localsData: localsInput) {
+    addLocal(localsData: $localsData) {
+      name
+    }
+  }
+`;

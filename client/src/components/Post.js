@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, Dropdown, Alert, Container } from "react-bootstrap";
-
+import { Container, Button } from "react-bootstrap";
+import "../styles/Post.css";
 import { useMutation } from "@apollo/client";
 import { ADD_FEED } from "../utils/mutations";
+import { Person, PersonCircle } from "react-bootstrap-icons";
 
 function Post() {
   const [feedStatus, setFeedStatus] = useState({
@@ -19,7 +20,7 @@ function Post() {
     // console.log(problem);
   }, [problem]);
 
-  const [addPost, { error }] = useMutation(ADD_FEED);
+  const [addPost] = useMutation(ADD_FEED);
 
   const postOnSubmit = async (e) => {
     e.preventDefault();
@@ -43,35 +44,41 @@ function Post() {
 
   return (
     <>
-      <form onSubmit={postOnSubmit}>
-        <input
-          type="text"
-          name="status"
-          className="feedBox"
-          value={feedStatus.status}
-          onChange={(e) => {
-            setFeedStatus({ [e.target.name]: e.target.value });
-          }}
-          placeholder="Inform your community"
-        />
-
-        <div>
-          <label className="boxLabel">
+      <Container fluid className="post-container">
+        <form onSubmit={postOnSubmit}>
+          <div className="form-group">
+            <label id="post-icon" for="status">
+              <PersonCircle />
+            </label>
             <input
-              type="checkbox"
-              name="problem"
-              className="checkBox"
-              value={problem}
-              onChange={checkboxHandler}
+              type="text"
+              name="status"
+              id="status"
+              className="feedBox"
+              value={feedStatus.status}
+              onChange={(e) => {
+                setFeedStatus({ [e.target.name]: e.target.value });
+              }}
+              placeholder="Inform your community"
             />
-            Problem? check here.
-          </label>
-        </div>
-
-        <button className="button" type="submit">
-          Click Here
-        </button>
-      </form>
+          </div>
+          <div className="form-group2">
+            <label className="boxLabel">
+              <input
+                type="checkbox"
+                name="problem"
+                className="checkBox"
+                value={problem}
+                onChange={checkboxHandler}
+              />
+              <p id="problemo">Mark as an active problem</p>
+            </label>
+            <Button className="button" type="submit">
+              Post{" "}
+            </Button>
+          </div>
+        </form>
+      </Container>
     </>
   );
 }
