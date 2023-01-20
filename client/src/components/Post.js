@@ -3,7 +3,7 @@ import { Container, Button } from "react-bootstrap";
 import "../styles/Post.css";
 import { useMutation } from "@apollo/client";
 import { ADD_FEED } from "../utils/mutations";
-import { Person, PersonCircle } from "react-bootstrap-icons";
+import { PersonCircle } from "react-bootstrap-icons";
 
 function Post() {
   const [feedStatus, setFeedStatus] = useState({
