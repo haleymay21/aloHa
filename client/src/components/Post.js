@@ -46,7 +46,7 @@ function Post() {
     <>
       <Container fluid className="post-container">
         <form onSubmit={postOnSubmit}>
-          <div className="form-group">
+          <div className="form-group-post">
             <label id="post-icon" for="status">
               <PersonCircle />
             </label>
