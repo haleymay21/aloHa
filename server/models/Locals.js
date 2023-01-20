@@ -6,13 +6,13 @@ const localsSchema = new Schema(
       type: String,
       required: true,
       minlength: 1,
-      maxlength: 50,
+      maxlength: 100,
     },
     hometown: {
       type: String,
       required: true,
       minlength: 1,
-      maxlength: 50,
+      maxlength: 100,
     },
     // picture download property here
     image: {
@@ -22,19 +22,19 @@ const localsSchema = new Schema(
       type: String,
       required: true,
       minlength: 1,
-      maxlength: 200,
+      maxlength: 1000,
     },
     support: {
       type: String,
       required: true,
       minlength: 1,
-      maxlength: 200,
+      maxlength: 1000,
     },
     whereAreYou: {
       type: String,
       required: true,
       minlength: 1,
-      maxlength: 50,
+      maxlength: 200,
     },
   },
   {
