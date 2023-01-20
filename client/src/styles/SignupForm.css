@@ -16,12 +16,12 @@
     text-align: center;
 }
 
-.signupPic {
-    background-size: cover;
+#signupPic {
+    float: right;
 
 }
 
 .signupContainer {
     display: flex;
-    flex-wrap:
+    flex-wrap:nowrap;
 }

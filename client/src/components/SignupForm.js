@@ -80,6 +80,9 @@ const SignupForm = () => {
             Something went wrong with your signup!
           </Alert>
           <Container fluid>
+          <div class="intro-img">
+          <img id="signupPic" src="/aloHa-img3.png" alt="prof-pic" />
+          </div>
             <div className="signupForms">
               <Form.Group>
                 <Form.Label htmlFor="firstname" id="formLabel">First Name</Form.Label>
@@ -173,6 +176,7 @@ const SignupForm = () => {
                 Submit
               </Button>
             </div>
+           
           </Container>
         </Form>
     </>
