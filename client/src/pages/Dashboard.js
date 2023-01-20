@@ -3,7 +3,7 @@ import { Container, Col, Row } from "react-bootstrap";
 
 import Post from "../components/Post";
 import SideNav from "../components/SideNav";
-import FeedCard from "../components/FeedCard";
+import FeedCard from "../components/feedCard";
 import Navbar from "../components/Navbar";
 import "../styles/Dashboard.css";
 
