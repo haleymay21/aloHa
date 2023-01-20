@@ -35,7 +35,12 @@
 
 .form-group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  border-bottom: 50px;
+}
+
+.form-group-post {
+  display: flex;
   border-bottom: 50px;
 }
 

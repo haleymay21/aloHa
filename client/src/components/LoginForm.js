@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Form, Button, Alert, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
@@ -29,31 +29,27 @@ const LoginForm = () => {
     setUserFormData({ ...userFormData, [name]: value });
   };
 
+  const navigate = useNavigate();
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
 
     try {
       const { data } = await login({
         variables: { ...userFormData },
       });
 
-      console.log(data);
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
 
-    // clear form values
-    setUserFormData({
-      email: "",
-      password: "",
-    });
+    // user logged in => navigate to the dashboard
+    (await Auth.loggedIn())
+      ? navigate("/dashboard")
+      : console.log("incorrect email or password!");
   };
 
   return (
@@ -104,13 +100,14 @@ const LoginForm = () => {
           }}
         >
           <Button
+            className="login-btn"
             disabled={!(userFormData.email && userFormData.password)}
             type="submit"
           >
             Login
           </Button>
           <Link to="/signup">
-            <Button>Create an Account</Button>
+            <Button className="login-btn">Create an Account</Button>
           </Link>
         </Container>
       </Form>

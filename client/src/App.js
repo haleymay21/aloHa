@@ -14,7 +14,6 @@ import { setContext } from "@apollo/client/link/context";
 
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
-import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Locals from "./pages/Locals";
 

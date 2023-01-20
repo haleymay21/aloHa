@@ -3,7 +3,7 @@ import { Container, Button } from "react-bootstrap";
 import "../styles/Post.css";
 import { useMutation } from "@apollo/client";
 import { ADD_FEED } from "../utils/mutations";
-import { Person, PersonCircle } from "react-bootstrap-icons";
+import { PersonCircle } from "react-bootstrap-icons";
 
 function Post() {
   const [feedStatus, setFeedStatus] = useState({
@@ -17,7 +17,7 @@ function Post() {
   };
 
   useEffect(() => {
-    console.log(problem);
+    // console.log(problem);
   }, [problem]);
 
   const [addPost] = useMutation(ADD_FEED);
@@ -25,7 +25,7 @@ function Post() {
   const postOnSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(feedStatus, problem);
+    // console.log(feedStatus, problem);
 
     setFeedStatus({ status: feedStatus.status, problem: problem });
 
@@ -40,13 +40,13 @@ function Post() {
       console.error(e);
     }
   };
-  console.log(feedStatus, problem);
+  // console.log(feedStatus, problem);
 
   return (
     <>
       <Container fluid className="post-container">
         <form onSubmit={postOnSubmit}>
-          <div className="form-group">
+          <div className="form-group-post">
             <label id="post-icon" for="status">
               <PersonCircle />
             </label>

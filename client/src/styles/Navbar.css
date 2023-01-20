@@ -26,6 +26,8 @@
   }
   
   #modal-title {
+    text-align: center;
+    margin-left: 200px;
     width: 100%;
     background-color: #f2bb66;
     color: #542d24;
@@ -38,3 +40,5 @@
   #locals-icon:hover {
     color: #f6f3f0;
   }
+
+  

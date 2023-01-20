@@ -1,12 +1,18 @@
 .localForms {
-    margin-top: 60px;
-    padding-top: 25px;
-    padding-left: 300px;
-    padding-right: 300px;
+    margin-top: 30px;
+    padding-top: 17px;
+    padding-left: 154px;
+    padding-right: 154px;
     
 }
 
 .localButton {
     margin-top: 50px;
-    margin-left: 500px;
+    margin-left: 340px;
 }
+
+#formLabel {
+    font-size: 20px;
+    text-align: left;
+}
+
