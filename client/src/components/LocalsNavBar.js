@@ -7,6 +7,7 @@ import Auth from "../utils/auth";
 import LocalsForm from "./LocalsForm";
 import "../styles/Navbar.css";
 
+
 const LocalsNavbar = () => {
   const [showModal, setShowModal] = useState(false);
 

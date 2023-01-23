@@ -11,7 +11,7 @@ const AppNavbar = () => {
       <Navbar fluid id="navbar" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
-            MINI LOGO WILL GO HERE{" "}
+            aloHā{" "}
           </Navbar.Brand>
           <Navbar.Collapse id="navbar">
             <Nav className="ml-auto myNav">

@@ -4,7 +4,6 @@ Application built to help users connect with their community to reach out and he
 
 ## Description
 
-"It's like Pokemon Go! but for the houseless." - Tim
 
 ### Screenshots
 
