@@ -7,7 +7,6 @@ import Auth from "../utils/auth";
 import LocalsForm from "./LocalsForm";
 import "../styles/Navbar.css";
 
-
 const LocalsNavbar = () => {
   const [showModal, setShowModal] = useState(false);
 
@@ -16,7 +15,7 @@ const LocalsNavbar = () => {
       <Navbar fluid id="navbar" expand="lg">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
-            MINI LOGO WILL GO HERE{" "}
+            aloHā{" "}
           </Navbar.Brand>
           <Navbar.Collapse id="navbar">
             <Nav className="ml-auto myNav">
