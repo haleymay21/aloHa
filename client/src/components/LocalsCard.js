@@ -28,31 +28,7 @@ const LocalsCard = () => {
         {localsData.map((localsData) => {
           return (
             <MDBCol>
-              <Button
-                id="locals-card-button"
-                onClick={() => setShowModal(true)}
-              >
-                Show Modal
-              </Button>
-              <Modal
-                size="lg"
-                show={showModal}
-                onHide={() => setShowModal(false)}
-                aria-labelledby="locals-card-modal"
-              >
-                <Tab.Container defaultActiveKey="new-card">
-                  <Modal.Header closeButton>
-                    <Modal.Title id="locals-card-modal">
-                      <p id="modal-card-title">
-                        {" "}
-                        &nbsp;&nbsp;Add a New Profile &nbsp;&nbsp;
-                      </p>
-                    </Modal.Title>
-                  </Modal.Header>
-
-                  <Tab.Content>
-                    <Tab.Pane eventKey="new-card">
-                      <Modal.Body>
+              
                         <MDBCard
                           handleModalClose={() => setShowModal(false)}
                           className="our-locals"
@@ -109,19 +85,9 @@ const LocalsCard = () => {
                               </MDBCardText>
                             </div>
                           </MDBCardBody>
-                          <MDBCardFooter>
-                            <small className="text-muted">
-                              Last updated 3 mins ago
-                            </small>
-                          </MDBCardFooter>
                         </MDBCard>
-                      </Modal.Body>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </Modal>
-            </MDBCol>
-          );
+                    </MDBCol> 
+                    );
         })}
       </MDBRow>
     </>
