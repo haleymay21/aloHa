@@ -117,3 +117,13 @@ p,
 #about-us-title {
   padding-bottom: 20px;
 }
+
+#mission-statement {
+  font-family: "Rubik Mono One", sans-serif;
+  font-weight: bold;
+}
+
+#mission-statement2 {
+  font-weight: lighter;
+  font-size: medium;
+}
