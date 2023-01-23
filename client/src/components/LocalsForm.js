@@ -11,7 +11,7 @@ const LocalsForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
     name: "",
-    image: "",
+    // image: "",
     hometown: "",
     whatToKnow: "",
     support: "",
@@ -60,7 +60,7 @@ const LocalsForm = () => {
 
     setUserFormData({
       name: "",
-      image: "",
+      // image: "",
       hometown: "",
       whatToKnow: "",
       support: "",
@@ -83,7 +83,7 @@ const LocalsForm = () => {
             Something went wrong with your signup!
           </Alert>
 
-          <div className="localForms">
+          {/* <div className="localForms">
             <Form.Group>
               <Form.Label htmlFor="name" id="formLabel">
                 Name
@@ -98,7 +98,7 @@ const LocalsForm = () => {
               />
               <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
             </Form.Group>
-          </div>
+          </div> */}
 
           <div className="localForms">
             <Form.Group>
