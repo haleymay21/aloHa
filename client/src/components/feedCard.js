@@ -1,6 +1,5 @@
 // import style package here with specific style components
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Button } from "react-bootstrap";
 import { useQuery } from "@apollo/client";
@@ -17,7 +16,6 @@ const FeedCard = () => {
   const { error, data } = useQuery(FIND_ALL);
   const useData = data?.findAll || [];
   console.log(error);
-  console.log("useData: ", useData);
 
   // set and change problem status by clicking checkbox in feedCard
   const [resolved, setResolved] = useState(false);
