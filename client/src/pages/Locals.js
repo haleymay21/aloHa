@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Tab, Modal, Button } from "react-bootstrap";
+import React from "react";
 
 import { useQuery } from "@apollo/client";
 import { FIND_LOCALS } from "../utils/queries";
@@ -11,7 +10,6 @@ const Locals = () => {
   const { data } = useQuery(FIND_LOCALS);
   const localsData = data?.findLocals || [];
   console.log(localsData);
-  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
