@@ -5,7 +5,7 @@ import {
 } from "react-bootstrap";
 
 import LoginForm from "../components/LoginForm";
-import AlohaLogo from "../assets/download.png";
+import AlohaLogo from "../assets/aloHa-img1.png";
 import { CaretDown } from "react-bootstrap-icons";
 import Navbar from "../components/Navbar";
 import "../styles/Home.css";
@@ -18,9 +18,7 @@ const Home = () => {
         <Container>
           <img id="logo" src={AlohaLogo} alt="react logo" />
           <p id="mission">
-          <div id="mission-statement">We want people without a house to still feel a part of a community.</div>
-          <div id="mission-statement2">This is a commUNITY-based app that humanizes the people you see most every day ━  
-          giving you a lil information and a platform to communicate so that you can better take care of your neighbors.</div>
+          We want people without a house to still feel a part of a community.
           </p>
         </Container>
       </Container>
@@ -38,11 +36,8 @@ const Home = () => {
         <div id="container-us">
           <h1 id="about-us-title">About Us</h1>
           <p className="about-us-description">
-          </p>{" "}
-          <br></br>{" "}
-          <p className="about-us-description">
-         
-
+          This is a community-based app that humanizes the people you see most every day ━  
+          giving you a lil information and a platform to communicate so that you can better take care of your neighbors.
           </p>
         </div>
       </Container>
