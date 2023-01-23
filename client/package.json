@@ -19,7 +19,7 @@
     "react-scripts": "^4.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
