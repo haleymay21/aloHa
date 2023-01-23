@@ -53,6 +53,7 @@ const typeDefs = gql`
   input localsInput {
     name: String
     hometown: String
+    image: String
     whatToKnow: String
     support: String
     whereAreYou: String
