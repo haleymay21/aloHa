@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f73ed30b.css",
+    "main.js": "/static/js/main.b06aed33.js",
+    "static/media/aloHa-img1.png": "/static/media/aloHa-img1.a047d65a171570388014.png",
+    "index.html": "/index.html",
+    "main.f73ed30b.css.map": "/static/css/main.f73ed30b.css.map",
+    "main.b06aed33.js.map": "/static/js/main.b06aed33.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f73ed30b.css",
+    "static/js/main.b06aed33.js"
+  ]
+}
