@@ -11,7 +11,7 @@ const LocalsForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
     name: "",
-    // image: "",
+    image: "",
     hometown: "",
     whatToKnow: "",
     support: "",
@@ -25,14 +25,6 @@ const LocalsForm = () => {
   const [addLocal, { error }] = useMutation(ADD_LOCAL, {
     refetchQueries: [{ query: FIND_LOCALS }],
   });
-
-  // useEffect(() => {
-  //   if (error) {
-  //     setShowAlert(true);
-  //   } else {
-  //     setShowAlert(false);
-  //   }
-  // }, [error]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -60,7 +52,7 @@ const LocalsForm = () => {
 
     setUserFormData({
       name: "",
-      // image: "",
+      image: "",
       hometown: "",
       whatToKnow: "",
       support: "",
@@ -83,7 +75,7 @@ const LocalsForm = () => {
             Something went wrong with your signup!
           </Alert>
 
-          {/* <div className="localForms">
+          <div className="localForms">
             <Form.Group>
               <Form.Label htmlFor="name" id="formLabel">
                 Name
@@ -98,7 +90,7 @@ const LocalsForm = () => {
               />
               <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
             </Form.Group>
-          </div> */}
+          </div>
 
           <div className="localForms">
             <Form.Group>
@@ -116,20 +108,7 @@ const LocalsForm = () => {
               <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
             </Form.Group>
           </div>
-          {/* <Form.Group>
-            <Form.Label htmlFor="lastname">Last Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Your lastname"
-              name="lastname"
-              onChange={handleInputChange}
-              value={userFormData.lastname}
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Last name is required!
-            </Form.Control.Feedback>
-          </Form.Group> */}
+
           <div className="localForms">
             <Form.Group>
               <Form.Label htmlFor="hometown" id="formLabel">
