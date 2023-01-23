@@ -11,6 +11,7 @@ const LocalsForm = () => {
   // set initial form state
   const [userFormData, setUserFormData] = useState({
     name: "",
+    image: "",
     hometown: "",
     whatToKnow: "",
     support: "",
@@ -21,7 +22,9 @@ const LocalsForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  const [addLocal, { error }] = useMutation(ADD_LOCAL, {refetchQueries:[{query: FIND_LOCALS}]});
+  const [addLocal, { error }] = useMutation(ADD_LOCAL, {
+    refetchQueries: [{ query: FIND_LOCALS }],
+  });
 
   // useEffect(() => {
   //   if (error) {
@@ -48,7 +51,7 @@ const LocalsForm = () => {
     console.log(userFormData);
     try {
       const { data } = await addLocal({
-        variables: { localsData:{...userFormData }},
+        variables: { localsData: { ...userFormData } },
       });
       console.log(data);
     } catch (err) {
@@ -57,6 +60,7 @@ const LocalsForm = () => {
 
     setUserFormData({
       name: "",
+      image: "",
       hometown: "",
       whatToKnow: "",
       support: "",
@@ -81,7 +85,9 @@ const LocalsForm = () => {
 
           <div className="localForms">
             <Form.Group>
-              <Form.Label htmlFor="name" id="formLabel">Name</Form.Label>
+              <Form.Label htmlFor="name" id="formLabel">
+                Name
+              </Form.Label>
               <Form.Control
                 type="text"
                 placeholder="What is your name/nickname?"
@@ -94,6 +100,22 @@ const LocalsForm = () => {
             </Form.Group>
           </div>
 
+          <div className="localForms">
+            <Form.Group>
+              <Form.Label htmlFor="image" id="formLabel">
+                Profile Picture
+              </Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="add an image"
+                name="image"
+                onChange={handleInputChange}
+                value={userFormData.image}
+                required
+              />
+              <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
+            </Form.Group>
+          </div>
           {/* <Form.Group>
             <Form.Label htmlFor="lastname">Last Name</Form.Label>
             <Form.Control
@@ -110,7 +132,9 @@ const LocalsForm = () => {
           </Form.Group> */}
           <div className="localForms">
             <Form.Group>
-              <Form.Label htmlFor="hometown" id="formLabel">Hometown</Form.Label>
+              <Form.Label htmlFor="hometown" id="formLabel">
+                Hometown
+              </Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Where are you from?"
@@ -125,7 +149,9 @@ const LocalsForm = () => {
 
           <div className="localForms">
             <Form.Group>
-              <Form.Label htmlFor="whatToKnow" id="formLabel">About</Form.Label>
+              <Form.Label htmlFor="whatToKnow" id="formLabel">
+                About
+              </Form.Label>
               <Form.Control
                 type="whatToKnow"
                 placeholder="What would you like people in the neighborhood to know about you?"
@@ -140,7 +166,9 @@ const LocalsForm = () => {
 
           <div className="localForms">
             <Form.Group>
-              <Form.Label htmlFor="support" id="formLabel">Support</Form.Label>
+              <Form.Label htmlFor="support" id="formLabel">
+                Support
+              </Form.Label>
               <Form.Control
                 type="support"
                 placeholder="What kind of things/support would benefit you the most?"
@@ -155,7 +183,9 @@ const LocalsForm = () => {
 
           <div className="localForms">
             <Form.Group>
-              <Form.Label htmlFor="whereAreYou" id="formLabel">Location</Form.Label>
+              <Form.Label htmlFor="whereAreYou" id="formLabel">
+                Location
+              </Form.Label>
               <Form.Control
                 type="whereAreYou"
                 placeholder="Where can your community find you?"
