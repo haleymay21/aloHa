@@ -31,6 +31,7 @@
 
 #name {
   float: inline-start;
+  margin-bottom: 20px;
 }
 
 #date {
@@ -45,4 +46,31 @@
   border-color: rgb(198, 2, 2);
   border-style: solid;
   border-width: 3px;
+}
+
+.deleteBtn {
+  float: right;
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 0px;
+}
+
+.deleteBtn:hover {
+  background-color: bisque;
+  color: black;
+}
+
+.status {
+  font-size: 18px;
+  border-top: solid;
+}
+
+#status-problem {
+  padding-bottom: 30px;
+}
+
+.card-subtitle {
+  margin: 0;
 }
