@@ -178,19 +178,7 @@ const LocalsForm = () => {
           </div>
 
           <div className="localButton">
-            <Button
-              //   disabled={
-              //     !(
-              //       userFormData.name &&
-              //       userFormData.hometown &&
-              //       userFormData.whatToKnow &&
-              //       userFormData.support &&
-              //       userFormData.whereAreYou
-              //     )
-              //   }
-              type="submit"
-              variant="success"
-            >
+            <Button type="submit" variant="success">
               Submit
             </Button>
           </div>
