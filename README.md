@@ -1,5 +1,4 @@
-
-# AloHa (MERN Stack)
+# aloHa (MERN Stack)
 
 A single page application built to help users connect with their community to reach out and help the local houseless.
 
@@ -16,12 +15,11 @@ Any additional information goes here
 - [Features](#Features)
 - [Authors](#Authors)
 
-
 ## 🔗 Links
+
 GitHub: https://github.com/JacquelineHockin/aloHa
 
 Heroku: https://aloha.herokuapp.com/
-
 
 ## Tech Stack
 
@@ -33,18 +31,17 @@ Heroku: https://aloha.herokuapp.com/
 
 JavaScript
 
-
 ## License
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-
-
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![screenshot of application homepage](./client/src/assets/homepage.png)
 
-![screenshot of application homepage]()
+![screenshot of application dashboard](./client/src/assets/dashboard.png)
+
+![screenshot of application local profiles](./client/src/assets/locals.png)
 
 ## Run Locally
 
@@ -72,22 +69,15 @@ Start the server
   npm run development
 ```
 
-
 ## Features
 
 - Users can sign-up, log-in and post for help by marking the case is open
 - Users can create a profile to upload pictures and show the location and the situation
 - Users in the community can offer help and change case status to close
 
-
-
-
-
 ## Authors
 
-- Jacqueline - https://github.com/JacquelineHockin 
+- Jacqueline - https://github.com/JacquelineHockin
 - Haley - https://github.com/haleymay21
 - Chase - https://github.com/chasebinkley
 - Katie - https://github.com/KatieKim22
-
-
