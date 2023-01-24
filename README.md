@@ -1,6 +1,6 @@
 # aloHa (MERN Stack)
 
-A single page application built to help users connect with their community to reach out and help the local houseless.
+A social media web application built to help users connect with their community so that they can better look after the houseless individuals in their respective neighborhoods. We want people who don’t have a house to still feel a part of a community. Each houseless person has a profile with a bio and important information that guides the user to help in a real and productive way. 
 
 ## Table of Contents
 
