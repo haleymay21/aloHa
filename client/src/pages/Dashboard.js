@@ -7,12 +7,11 @@ import FeedCard from "../components/feedCard";
 import Navbar from "../components/Navbar";
 import "../styles/Dashboard.css";
 
-
 const Dashboard = () => {
   return (
     <>
       <Navbar />
-      <Container fluid bg->
+      <Container fluid>
         <Row>
           <Col xs={2} id="sidebar-wrapper">
             <SideNav />
