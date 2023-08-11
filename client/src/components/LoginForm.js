@@ -46,7 +46,7 @@ const LoginForm = () => {
 
     // user logged in => navigate to the dashboard
     (await Auth.loggedIn())
-      ? navigate("/dashboard")
+      ? window.location.replace("/dashboard")
       : console.log("incorrect email or password!");
   };
 
